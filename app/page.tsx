@@ -6,6 +6,11 @@ import IntroSection from "@/components/home/IntroSection";
 import Sidebar from "@/components/home/Sidebar";
 import HistoryContent from "@/components/01_history/HistoryContent";
 import VisionContent from "@/components/02_vision/VisionContent";
+import CurriculumContent from "@/components/03_curriculum/CurriculumContent";
+import ExpertiseContent from "@/components/04_expertise/ExpertiseContent";
+import CommitteeContent from "@/components/05_committee/CommitteeContent";
+import LogoContent from "@/components/06_logo/LogoContent";
+import ContactContent from "@/components/07_contact/ContactContent";
 import EventSection from "@/components/home/EventSection";
 import NewsSection from "@/components/home/NewsSection";
 import HighlightSection from "@/components/home/HighlightSection";
@@ -21,17 +26,16 @@ export default function Home() {
         return <HistoryContent />;
       case "vision":
         return <VisionContent />;
-      // case "curriculum":
-      //   return <CurriculumContent />;
-      // case "expertise":
-      //   return <ExpertiseContent />;
-      // case "committee":
-      //   return <CommitteeContent />;
-
-      // case "logo":
-      //   return <LogoContent />;
-      // case "contact":
-      //   return <ContactContent />;
+      case "curriculum":
+        return <CurriculumContent />;
+      case "expertise":
+        return <ExpertiseContent />;
+      case "committee":
+        return <CommitteeContent />;
+      case "logo":
+        return <LogoContent />;
+      case "contact":
+        return <ContactContent />;
       default:
         return <HistoryContent />;
     }
