@@ -152,6 +152,10 @@
 }
 
 @media (max-width: 1024px) {
+    .visionContainer {
+        gap: 2.5rem;
+    }
+
     .missionRoleGrid, .objectiveGrid {
         grid-template-columns: 1fr;
     }
@@ -162,5 +166,41 @@
     
     .mainTitle {
         font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .subTitle {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .detailsTitle {
+        font-size: 1.25rem;
+    }
+
+    .detailsIconCircle {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainTitle {
+        font-size: 1.4rem;
+    }
+
+    .objectiveCard {
+        padding: 1.25rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cardIconBox {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
     }
 }

@@ -124,11 +124,61 @@
 @media (max-width: 1024px) {
     .contactGrid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .introCol {
+        padding: 1.25rem;
+    }
+
+    .infoCol {
+        justify-content: center;
     }
 }
 
 @media (max-width: 768px) {
     .infoCard {
         padding: 2rem;
+    }
+
+    .introTitle {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .introDesc {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .cardMainTitle {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .infoCard {
+        padding: 1.5rem;
+    }
+
+    .infoItem {
+        gap: 1rem;
+    }
+
+    .iconBox {
+        min-width: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.25rem;
+    }
+
+    .itemTitle {
+        font-size: 1rem;
+    }
+
+    .itemText {
+        font-size: 0.9rem;
     }
 }

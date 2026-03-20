@@ -232,6 +232,9 @@
   .sectionTitle {
     font-size: 1.6rem;
   }
+  .sectionDescription {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -239,11 +242,43 @@
     font-size: 1.4rem;
   }
 
+  .chairmanSection {
+    margin-bottom: 2rem;
+  }
+
   .chairmanCard {
     width: 210px;
   }
 
+  .chairmanImageContainer {
+    height: 180px;
+  }
+
+  .chairmanInfo {
+    padding: 1rem;
+  }
+
+  .membersGrid {
+    gap: 1rem;
+  }
+
   .memberCard {
-    width: 180px;
+    width: 160px;
+  }
+
+  .memberImageContainer {
+    height: 130px;
+  }
+
+  .memberInfo {
+    padding: 0.75rem;
+  }
+
+  .memberName {
+    font-size: 0.75rem;
+  }
+
+  .memberPosition {
+    font-size: 0.65rem;
   }
 }

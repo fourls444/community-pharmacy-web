@@ -141,8 +141,16 @@
 }
 
 @media (max-width: 1024px) {
+    .event {
+        padding: 4rem 0;
+    }
+    .header {
+        margin-bottom: 2rem;
+    }
     .item {
         grid-template-columns: 100px 1fr;
+        gap: 2rem;
+        padding: 2rem 0;
     }
     .imageWrapper {
         display: none;
@@ -161,5 +169,26 @@
         flex-direction: row;
         gap: 1rem;
         align-items: baseline;
+        justify-content: flex-start;
+        padding-top: 0;
+    }
+    .day {
+        font-size: 3rem;
+    }
+    .eventTitle {
+        font-size: 1.35rem;
+    }
+    .tagContainer {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+    .seeAll {
+        font-size: 1rem;
     }
 }

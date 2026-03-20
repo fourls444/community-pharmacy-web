@@ -60,20 +60,41 @@
 /* === Responsive === */
 @media (max-width: 768px) {
     .topBanner {
-        padding: 1rem;
-        flex-direction: row;
+        padding: 1rem 1.5rem;
     }
     
     .brandTitle {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+        line-height: 1.2;
     }
 
     .brandSubtitle {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
+        margin-top: 2px;
     }
     
     .logo {
-        width: 35px;
-        height: 35px;
+        width: 36px;
+        height: 36px;
+        padding: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brandTitle {
+        font-size: 1rem;
+    }
+
+    .brandSubtitle {
+        font-size: 0.65rem;
+    }
+
+    .logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .topBanner {
+        padding: 0.75rem 1rem;
     }
 }

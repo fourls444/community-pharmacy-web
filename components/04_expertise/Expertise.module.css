@@ -64,11 +64,24 @@
 @media (max-width: 1024px) {
     .expertiseGrid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+    .title {
+        font-size: 1.6rem;
+        text-align: center;
     }
 }
 
 @media (max-width: 640px) {
     .expertiseGrid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .cardBody {
+        padding: 1rem;
+        text-align: center;
+    }
+    .imageBox {
+        height: 160px;
     }
 }

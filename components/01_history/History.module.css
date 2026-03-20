@@ -127,28 +127,46 @@
 }
 
 @media (max-width: 1024px) {
+    .contentTitle {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    .description {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
     .timelineItem {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
-
     .timeLabel {
         min-width: unset;
+        padding: 0.75rem 1rem;
     }
-
     .quoteBox {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
         margin-top: 3rem;
     }
-
     .quoteTitle {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
     }
-
     .quoteText {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+    .quoteIconLeft, .quoteIconRight {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contentTitle {
+        font-size: 1.4rem;
+    }
+    .quoteBox {
+        padding: 1.5rem 1rem;
     }
 }
 
