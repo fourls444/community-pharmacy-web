@@ -5,10 +5,10 @@ import styles from "./Sidebar.module.css";
 const menuItems = [
   { id: "history", name: "ประวัติความเป็นมา" },
   { id: "vision", name: "วิสัยทัศน์และพันธกิจ" },
-  { id: "curriculum", name: "ข้อมูลหลักสูตร" },
+  { id: "course", name: "ข้อมูลหลักสูตร" },
   { id: "expertise", name: "สาขาความเชี่ยวชาญ" },
   { id: "committee", name: "คณะกรรมการบริหาร" },
-  { id: "logo", name: "ตราสัญลักษณ์" },
+  { id: "emblem", name: "ตราสัญลักษณ์" },
   { id: "contact", name: "ติดต่อและสถานที่ตั้ง" },
 ];
 

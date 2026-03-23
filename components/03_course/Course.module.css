@@ -1,0 +1,503 @@
+.container {
+    width: 100%;
+}
+
+/* ===================== HERO TOP SECTION ===================== */
+/* (The original large block from provided image) */
+.heroGrid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.mainHeroCard {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f1f5f9;
+}
+
+.heroHeader {
+    background: #8e9a4e; /* Olive Green */
+    padding: 2.25rem 2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.heroIconBox {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+}
+
+.heroTitleArea {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.heroTitle {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.heroSub {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.heroBody {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 2rem;
+}
+
+.heroDesc {
+    font-size: 1.05rem;
+    color: #334155;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.heroTags {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.heroTag {
+    background: #fbfdf0;
+    padding: 0.6rem 1.25rem;
+    border-radius: 100px;
+    font-size: 0.95rem;
+    color: #4b5320;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #f1f5e9;
+}
+
+.heroBtnArea {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.heroDlBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1rem 1.75rem;
+    background: #ffffff;
+    border: 1.5px solid #d4dcb0;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    transition: all 0.2s ease;
+}
+
+.heroDlIconBox {
+    width: 38px;
+    height: 38px;
+    background: #4a4d24;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.heroRight {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.heroImageCard {
+    width: 100%;
+    height: 310px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.heroImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heroStatsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.heroStatCard {
+    padding: 2.25rem 1.5rem;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    min-height: 240px;
+}
+
+.heroStatGreen {
+    background: #8e9a4e;
+    color: white;
+}
+
+.heroStatWhite {
+    background: white;
+    color: #1e293b;
+    border: 1px solid #f1f5f9;
+}
+
+.heroStatIcon {
+    font-size: 2.4rem;
+}
+
+.heroStatTitle {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.heroStatText {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* ===================== NEW COURSE CONTENT BLOCK ===================== */
+.courseWrapper {
+    width: 100%;
+}
+
+.textHeadingBox {
+    margin-bottom: 40px;
+}
+
+.heading {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+.subHeading {
+    font-size: 14.5px;
+    color: #555;
+    margin: 0 0 32px 0;
+    line-height: 1.7;
+}
+
+.cardsRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.rowHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0 20px 0;
+    padding-left: 12px;
+    border-left: 5px solid #7a7536;
+}
+
+.rowTitle {
+    font-size: 22px;
+    font-weight: 800;
+    color: #111;
+    margin: 0;
+}
+
+.viewAllBtn {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #64748b;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.viewAllBtn:hover {
+    color: #7a7536;
+    text-decoration: underline;
+}
+
+.courseCard {
+    border: 1px solid #e8e8dc;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    overflow: hidden;
+    background: #fff;
+    height: 100%;
+}
+
+.courseCard:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+}
+
+.courseCard:hover .cardHeader {
+    background: linear-gradient(to right,#f0f0d8 0%, #FFFFFF 80%);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 24px 24px 20px 24px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8dc;
+    transition: background 0.25s ease, border-color 0.25s ease;
+    min-height: 120px;
+}
+
+.cardIcon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #72721B 0%, #A4A865 100%);
+    border-radius: 12px;
+}
+
+.cardTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+}
+
+.cardSubTitle {
+    font-size: 10px;
+    font-weight: 600;
+    color: #888;
+    margin: 0;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.cardBody {
+    flex: 1;
+    padding: 20px 24px;
+    background: #fff;
+}
+
+.cardDesc {
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.7;
+    margin: 0 0 20px 0;
+}
+
+.detailTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 12px 0;
+    padding-left: 12px;
+    border-left: 4px solid #7a7536;
+    line-height: 1.4;
+}
+
+.detailList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detailList li {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+}
+
+.detailList li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #7a7536;
+    font-weight: 700;
+}
+
+.downloadBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-top: 1px solid #e8e8dc;
+    border-radius: 0 0 16px 16px;
+    background: transparent;
+    color: #555;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: auto;
+}
+
+.courseCard:hover .downloadBtn {
+    background: linear-gradient(to right, #8a8a3a 0%, #a0a050 100%);
+    border-top-color: transparent;
+    color: #fff;
+}
+
+.certFooter {
+    background: linear-gradient(135deg, #7a7536 0%, #4a4d24 100%);
+    border-radius: 16px;
+    padding: 32px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 4rem;
+}
+
+.certLeft {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1;
+}
+
+.certIcon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+}
+
+.certText h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px 0;
+}
+
+.certText p {
+    font-size: 13.5px;
+    color: #ffff;
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 100;
+}
+
+.certText strong {
+    color: #fff;
+    font-weight: bold;
+}
+
+.certActions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.certBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: transparent;
+    color: #72721B;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.certBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+@media (max-width: 1200px) {
+    .heroGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cardsRow {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .certFooter {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 24px;
+    }
+    .heroTitle {
+        font-size: 1.4rem;
+    }
+    .heroHeader {
+        padding: 1.5rem;
+    }
+}

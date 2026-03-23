@@ -6,12 +6,12 @@ import IntroSection from "@/components/home/IntroSection";
 import Sidebar from "@/components/home/Sidebar";
 import HistoryContent from "@/components/01_history/HistoryContent";
 import VisionContent from "@/components/02_vision/VisionContent";
-import CurriculumContent from "@/components/03_curriculum/CurriculumContent";
+import CourseContent from "@/components/03_course/CourseContent";
 import ExpertiseContent from "@/components/04_expertise/ExpertiseContent";
 import CommitteeContent from "@/components/05_committee/CommitteeContent";
-import LogoContent from "@/components/06_logo/LogoContent";
+import EmblemContent from "@/components/06_emblem/EmblemContent";
 import ContactContent from "@/components/07_contact/ContactContent";
-import EventSection from "@/components/home/EventSection";
+import MeetingSection from "@/components/home/MeetingSection";
 import NewsSection from "@/components/home/NewsSection";
 import HighlightSection from "@/components/home/HighlightSection";
 
@@ -26,14 +26,14 @@ export default function Home() {
         return <HistoryContent />;
       case "vision":
         return <VisionContent />;
-      case "curriculum":
-        return <CurriculumContent />;
+      case "course":
+        return <CourseContent />;
       case "expertise":
         return <ExpertiseContent />;
       case "committee":
         return <CommitteeContent />;
-      case "logo":
-        return <LogoContent />;
+      case "emblem":
+        return <EmblemContent />;
       case "contact":
         return <ContactContent />;
       default:
@@ -52,7 +52,7 @@ export default function Home() {
         </div>
       </div>
       <HighlightSection />
-      <EventSection />
+      <MeetingSection />
       <NewsSection />
     </main>
   );

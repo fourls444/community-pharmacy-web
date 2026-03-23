@@ -3,9 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineLocationMarker, HiOutlineCalendar, HiOutlineUsers, HiOutlineBookmark, HiChevronRight } from "react-icons/hi";
-import styles from "./EventSection.module.css";
+import { FaGraduationCap } from "react-icons/fa6";
+import styles from "./MeetingSection.module.css";
 
-const eventList = [
+const meetingList = [
   {
     day: "2",
     month: "พ.ค.",
@@ -13,12 +14,13 @@ const eventList = [
     location: "ห้อง Sapphire 204-206 ศูนย์การประชุม อิมแพ็ค ฟอรั่ม เมืองทองธานี จังหวัดนนทบุรี",
     date: "วันที่จัดประชุม : 02 พ.ค. 2569 - 13 ก.ย. 2569",
     attendees: "100 คน",
+    cpe: "12.0",
     tags: [
       { name: "บุคคลทั่วไป", active: false },
       { name: "เภสัชกร", active: true },
     ],
     category: "รายวิทยาลัย",
-    image: "/images/event/img (1).jpg",
+    image: "/images/meeting/img (1).jpg",
   },
   {
     day: "1",
@@ -27,11 +29,12 @@ const eventList = [
     location: "ห้อง Sapphire 204-206 ศูนย์การประชุม อิมแพ็ค ฟอรั่ม เมืองทองธานี จังหวัดนนทบุรี",
     date: "วันที่จัดประชุม : 02 พ.ค. 2569 - 13 ก.ย. 2569",
     attendees: "100 คน",
+    cpe: "8.5",
     tags: [
       { name: "เภสัชกร", active: true },
     ],
     category: "ราชวิทยาลัย",
-    image: "/images/event/img (1).png",
+    image: "/images/meeting/img (1).png",
   },
   {
     day: "13",
@@ -40,51 +43,61 @@ const eventList = [
     location: "ห้อง Sapphire 204-206 ศูนย์การประชุม อิมแพ็ค ฟอรั่ม เมืองทองธานี จังหวัดนนทบุรี",
     date: "วันที่จัดประชุม : 02 พ.ค. 2569 - 13 ก.ย. 2569",
     attendees: "100 คน",
+    cpe: "10.0",
     tags: [
       { name: "บุคคลทั่วไป", active: false },
     ],
     category: "ราชวิทยาลัย",
-    image: "/images/event/img (2).png",
+    image: "/images/meeting/img (2).png",
   },
 ];
 
-export default function EventSection() {
+export default function MeetingSection() {
   return (
-    <section className={styles.event}>
+    <section className={styles.meeting}>
       <header className={styles.header}>
         <h2 className={styles.title}>
           การประชุมวิทยาลัยคุ้มครองผู้บริโภคด้านยาและสุขภาพ
         </h2>
-        <Link href="/events" className={styles.seeAll}>
+        <Link href="/meetings" className={styles.seeAll}>
           ดูทั้งหมด <HiChevronRight />
         </Link>
       </header>
 
       <div className={styles.list}>
-        {eventList.map((event, index) => (
+        {meetingList.map((meeting, index) => (
           <div key={index} className={styles.item}>
             <div className={styles.date}>
-              <span className={styles.day}>{event.day}</span>
-              <span className={styles.month}>{event.month}</span>
+              <span className={styles.day}>{meeting.day}</span>
+              <span className={styles.month}>{meeting.month}</span>
             </div>
 
             <div className={styles.content}>
-              <h3 className={styles.eventTitle}>{event.title}</h3>
+              <div className={styles.titleWrapper}>
+                <h3 className={styles.meetingTitle}>{meeting.title}</h3>
+                {meeting.cpe && (
+                  <div className={styles.cpeBadge}>
+                    <FaGraduationCap className={styles.cpeIcon} />
+                    <span>CPE {meeting.cpe} หน่วยกิต</span>
+                  </div>
+                )}
+              </div>
+
               <div className={styles.details}>
                 <div className={styles.detailRow}>
                   <HiOutlineLocationMarker className={styles.icon} />
-                  <span>{event.location}</span>
+                  <span>{meeting.location}</span>
                 </div>
                 <div className={styles.detailRow}>
                   <HiOutlineCalendar className={styles.icon} />
-                  <span>{event.date}</span>
+                  <span>{meeting.date}</span>
                 </div>
                 <div className={styles.tagContainer}>
                   <div className={styles.detailRow}>
                     <HiOutlineUsers className={styles.icon} />
                     <span>ผู้เข้าร่วม :</span>
                   </div>
-                  {event.tags.map((tag, tagIdx) => (
+                  {meeting.tags.map((tag, tagIdx) => (
                     <span
                       key={tagIdx}
                       className={`${styles.tag} ${tag.active ? styles.tagActive : ""}`}
@@ -93,20 +106,22 @@ export default function EventSection() {
                     </span>
                   ))}
                   <span style={{ color: '#475569', marginLeft: '0.5rem' }}>
-                    จำนวน : {event.attendees}
+                    จำนวน : {meeting.attendees}
                   </span>
                 </div>
                 <div className={styles.detailRow}>
                   <HiOutlineBookmark className={styles.icon} />
-                  <span>หมวดหมู่ : {event.category}</span>
+                  <span>หมวดหมู่ : {meeting.category}</span>
                 </div>
               </div>
             </div>
 
             <div className={styles.imageWrapper}>
-              <img
-                src={event.image}
-                alt={event.title}
+              <Image
+                src={meeting.image}
+                alt={meeting.title}
+                width={340}
+                height={200}
                 className={styles.image}
               />
             </div>
