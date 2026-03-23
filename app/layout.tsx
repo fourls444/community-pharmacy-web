@@ -12,6 +12,9 @@ const kanit = Kanit({
 export const metadata = {
   title: "วิทยาลัยเภสัชกรรมชุมชน",
   description: "The Community Pharmacy College of Thailand",
+  icons: {
+    icon: "/images/icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +26,7 @@ export default function RootLayout({
     <html lang="th" className={kanit.variable}>
       <body className="antialiased">
         <Header />
-        <main style={{ minHeight: '60vh' }}>
+        <main className="main-content">
           {children}
         </main>
         <Footer />

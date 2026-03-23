@@ -38,7 +38,7 @@
     display: flex;
     flex-direction: column;
     padding: 1.5rem 2.5rem;
-    border-left: 5px solid #ccce3a;
+    border-left: 5px solid #a3a33f;
     background: linear-gradient(90deg, #fcfdf2 0%, #fefef5 40%, rgba(255, 255, 255, 0) 100%);
     border-radius: 0 12px 12px 0;
     justify-content: center;
@@ -122,7 +122,8 @@
     padding: 0 1rem;
 }
 
-.quoteIconLeft, .quoteIconRight {
+.quoteIconLeft,
+.quoteIconRight {
     font-size: 4rem;
     line-height: 1;
     color: #d4dcb0;
@@ -144,32 +145,40 @@
         font-size: 1.6rem;
         text-align: center;
     }
+
     .description {
         font-size: 1rem;
         text-align: center;
         margin-bottom: 2.5rem;
     }
+
     .timelineItem {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
         margin-bottom: 1.5rem;
     }
+
     .timeLabel {
         min-width: unset;
         padding: 0.75rem 1rem;
     }
+
     .quoteBox {
         padding: 2rem 1.5rem;
         margin-top: 3rem;
     }
+
     .quoteTitle {
         font-size: 1.25rem;
     }
+
     .quoteText {
         font-size: 0.95rem;
     }
-    .quoteIconLeft, .quoteIconRight {
+
+    .quoteIconLeft,
+    .quoteIconRight {
         font-size: 3rem;
     }
 }
@@ -178,6 +187,7 @@
     .contentTitle {
         font-size: 1.4rem;
     }
+
     .quoteBox {
         padding: 1.5rem 1rem;
     }
@@ -348,14 +358,16 @@
 }
 
 @media (max-width: 1024px) {
-    .objectiveGrid, .missionRoleGrid {
+
+    .objectiveGrid,
+    .missionRoleGrid {
         grid-template-columns: 1fr;
     }
-    
+
     .mainTitle {
         font-size: 1.6rem;
     }
-    
+
     .detailsCard {
         padding: 1.5rem;
     }
