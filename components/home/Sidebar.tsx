@@ -20,23 +20,25 @@ interface SidebarProps {
 export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
   return (
     <aside className={styles.sidebar}>
-      <h2 className={styles.sidebarTitle}>
+      <h3 className={styles.sidebarTitle}>
         “ปกป้องสิทธิผู้บริโภค <br />
         สร้างสังคมสุขภาพดี”
-      </h2>
-      {menuItems.map((item) => {
-        const isActive = activeTab === item.id;
-        return (
-          <button
-            key={item.id}
-            onClick={() => onTabChange(item.id)}
-            className={`${styles.menuItem} ${isActive ? styles.activeItem : ""}`}
-            style={{ width: '100%', cursor: 'pointer', display: 'block' }}
-          >
-            {item.name}
-          </button>
-        );
-      })}
+      </h3>
+      <ul className={styles.menuList}>
+        {menuItems.map((item) => {
+          const isActive = activeTab === item.id;
+          return (
+            <li key={item.id}>
+              <button
+                onClick={() => onTabChange(item.id)}
+                className={`${styles.menuItem} ${isActive ? styles.activeItem : ""}`}
+              >
+                {item.name}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
     </aside>
   );
 }

@@ -53,7 +53,7 @@
 }
 
 .year {
-    font-family: var(--font-kanit), sans-serif;
+    font-family: var(--font-ibm-plex-sans-thai), sans-serif;
     font-size: 1.45rem;
     font-weight: 700;
     color: #a8ab4c;
@@ -62,7 +62,7 @@
 }
 
 .subtitleLabel {
-    font-family: var(--font-kanit), sans-serif;
+    font-family: var(--font-ibm-plex-sans-thai), sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
     color: #334155;

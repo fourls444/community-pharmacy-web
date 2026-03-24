@@ -14,7 +14,7 @@ export default function EmblemContent() {
           <FaQuoteRight className={styles.quoteIcon} />
           <div className={styles.logoImageSection}>
             <Image
-              src="/images/logo/logo.png"
+              src="/images/emblem/logo.png"
               alt="CCPT Logo"
               width={220}
               height={220}

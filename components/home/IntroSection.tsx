@@ -35,7 +35,7 @@ export default function IntroSection() {
           และมาตรฐานการให้บริการเภสัชกรรมระดับปฐมภูมิ <br />
           เพื่อเสริมสร้างระบบบริการสุขภาพที่มีคุณภาพและได้มาตรฐาน
         </p>
-        
+
         <div className={styles.statsRow}>
           <div className={styles.statItem}>
             <span className={styles.statNumber}>20+</span>
