@@ -138,19 +138,28 @@
 }
 
 /* ===================== RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+    .card {
+        width: 170px;
+    }
+    .chairmanCard {
+        width: 250px;
+    }
+    .header h2 {
+        font-size: 26px;
+    }
+}
+
 @media (max-width: 768px) {
     .header h2 {
         font-size: 22px;
     }
-
     .membersRow {
-        gap: 14px;
+        gap: 12px 14px;
     }
-
     .card {
         width: 160px;
     }
-
     .chairmanCard {
         width: 230px;
     }
@@ -158,14 +167,21 @@
 
 @media (max-width: 480px) {
     .card {
-        width: calc(50% - 10px);
+        width: calc(50% - 5px);
     }
-
     .chairmanCard {
         width: 200px;
     }
-
     .membersRow {
         gap: 10px;
+    }
+    .header h2 {
+        font-size: 20px;
+    }
+    .memberName {
+        font-size: 11px;
+    }
+    .memberRole {
+        font-size: 10px;
     }
 }

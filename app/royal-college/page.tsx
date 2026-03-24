@@ -7,7 +7,7 @@ import NewsSection from "./components/NewsSection/NewsSection";
 
 export default function RoyalCollegePage() {
     return (
-        <div>
+        <div style={{ fontFamily: "var(--font-ibm-plex-sans-thai), sans-serif" }}>
             <HeroSection />
             <AboutSection />
             <HistorySection />

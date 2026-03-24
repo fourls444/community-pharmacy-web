@@ -42,7 +42,7 @@
     color: #777;
     margin: 0;
     line-height: 1.6;
-    font-weight: 100;
+    font-weight: 400;
     
 }
 
@@ -105,17 +105,56 @@
 }
 
 /* ===================== RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .mainImage {
+        height: 350px;
+        object-position: center 20%;
+    }
+    .rightColumn {
+        padding: 24px;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
         gap: 16px;
     }
-
     .rightTitle {
         font-size: 18px;
     }
-
     .rightColumn {
         padding: 20px 20px;
+    }
+    .leftText h3 {
+        font-size: 22px;
+    }
+    .leftText p {
+        font-size: 15px;
+    }
+    .mainImage {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .leftText h3 {
+        font-size: 20px;
+    }
+    .leftText p {
+        font-size: 14px;
+    }
+    .contactItem h4 {
+        font-size: 12px;
+    }
+    .contactItem p {
+        font-size: 11px;
+    }
+    .rightTitle {
+        font-size: 16px;
     }
 }

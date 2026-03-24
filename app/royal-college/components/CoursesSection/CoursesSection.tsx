@@ -1,7 +1,56 @@
 import Image from "next/image";
 import styles from "./CoursesSection.module.css";
+import {
+  FaChevronRight
+} from "react-icons/fa6";
 
 /* --- SVGs --- */
+const CertIcon = () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+        <polyline points="10 9 9 9 8 9" />
+    </svg>
+);
+
+const MedicalIcon = () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+    </svg>
+);
+
+const FlaskIcon = () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 3h6" />
+        <path d="M10 3v7.4a2 2 0 0 1-.6 1.4L4 17.2a2 2 0 0 0-.6 1.4V20a2 2 0 0 0 2 2h13.2a2 2 0 0 0 2-2v-1.4a2 2 0 0 0-.6-1.4L14.6 11.8a2 2 0 0 1-.6-1.4V3" />
+    </svg>
+);
+
+const DownloadIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+);
+
+const PersonIcon = () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+    </svg>
+);
+
+const ApplyIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+    </svg>
+);
+
+
 const GradCapIcon = () => (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
@@ -25,14 +74,6 @@ const EyeIcon = () => (
 const ShieldIcon = () => (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-    </svg>
-);
-
-const DownloadIcon = () => (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-        <polyline points="7 10 12 15 17 10" />
-        <line x1="12" y1="15" x2="12" y2="3" />
     </svg>
 );
 
@@ -120,78 +161,321 @@ export default function CoursesSection() {
             </div>
 
             {/* ================= MIDDLE SECTION: 3 CARDS ================= */}
-            <div className={styles.threeCardsRow}>
-                {/* Card 1 */}
-                <div className={styles.courseCard}>
-                    <div className={styles.cardHeaderImg}>
-                        <Image src="/images/courses/card1.jpg" alt="Card 1" width={313} height={156} className={styles.cardHeaderImgEl} />
-                    </div>
-                    <div className={styles.cardBody}>
-                        <h4 className={styles.cardHeaderTitle}>วุฒิบัตรความชำนาญเฉพาะทาง</h4>
-                        <p className={styles.cardSubTitle}>Board Certified in<br/>Pharmacy Administration</p>
-                        <div className={styles.cardDesc}>
-                            <p>สำหรับเภสัชกรที่มุ่งมั่นความเชี่ยวชาญระดับสูง การรับรองจาก CPAT คือกุญแจสำคัญสู่ความเชื่อมั่น ในระดับองค์กรและระดับนโยบาย</p>
-                            <ul>
-                                <li><strong>มาตรฐานสภาเภสัชกรรม:</strong> จัดสอบและออกหนังสืออนุมัติ/วุฒิบัตร เพื่อรับรองความเชี่ยวชาญในสาขา &quot;การบริหารเภสัชกิจ&quot;</li>
-                                <li><strong>Competency Framework:</strong> เน้นการประเมินทักษะการวิเคราะห์ข้อมูลสุขภาพ การจัดการเชิงยุทธศาสตร์ และการตัดสินใจเชิงนโยบาย</li>
-                                <li><strong>Expert Network:</strong> ร่วมเป็นส่วนหนึ่งของทำเนียบเภสัชกรผู้เชี่ยวชาญด้าน การบริหารระดับประเทศ</li>
-                            </ul>
-                        </div>
-                        <button className={styles.infoBtnOutline}>ข้อมูลหลักสูตร</button>
-                    </div>
-                </div>
+            <div className={styles.rowHeader}>
+                <h2 className={styles.rowTitle}>หลักสูตรระยะสั้น</h2>
 
-                {/* Card 2 */}
-                <div className={styles.courseCard}>
-                    <div className={styles.cardHeaderImg}>
-                        <Image src="/images/courses/card2.png" alt="Card 2" width={313} height={156} className={styles.cardHeaderImgEl} />
-                    </div>
-                    <div className={styles.cardBody}>
-                        <h4 className={styles.cardHeaderTitle}>หลักสูตรอบรมระยะสั้น</h4>
-                        <p className={styles.cardSubTitle}>Management for Smart Pharmacist</p>
-                        <div className={styles.cardDesc}>
-                            <p>ติดอาวุธทักษะทางธุรกิจและนโยบาย เพื่อเพิ่มมูลค่าให้แก่บทบาทเภสัชกรในทุกภาคส่วน</p>
-                            <ul>
-                                <li><strong>Pharmaceutical Business Management:</strong> บริหารธุรกิจยาอย่างมืออาชีพ ทั้งการวางแผนกลยุทธ์ การตลาด และการจัดการห่วงโซ่อุปทาน</li>
-                                <li><strong>Health Economics &amp; Policy:</strong> เข้าใจกลไกเศรษฐศาสตร์สาธารณสุข เพื่อการวางแผนการเข้าถึงยา (Market Access) และการคัดเลือกยาเข้าบัญชียารายชื่อ</li>
-                                <li><strong>Pharmacy Leadership:</strong> พัฒนาทักษะการเป็นผู้นำ การบริหารทีมงาน และการสื่อสารในองค์กรขนาดใหญ่</li>
-                                <li><strong>Digital Transformation in Pharmacy:</strong> การใช้ Data Analytics และ AI เพื่อเพิ่มประสิทธิภาพการจัดการเภสัชกิจ</li>
-                            </ul>
-                        </div>
-                        <button className={styles.infoBtnOutline}>ข้อมูลหลักสูตร</button>
-                    </div>
-                </div>
+                <button className={styles.viewAllBtn}>ดูทั้งหมด <FaChevronRight style={{ fontSize: '10px', marginLeft: '4px' }} /></button>
 
-                {/* Card 3 */}
-                <div className={styles.courseCard}>
-                    <div className={styles.cardHeaderImg}>
-                        <Image src="/images/courses/card3.png" alt="Card 3" width={313} height={156} className={styles.cardHeaderImgEl} />
-                    </div>
-                    <div className={styles.cardBody}>
-                        <h4 className={styles.cardHeaderTitle}>บริหารเภสัชกิจ</h4>
-                        <p className={styles.cardSubTitle}>ต่อยอดโอกาสที่มากกว่าแค่การจ่ายยา</p>
-                        <div className={styles.cardDesc}>
-                            <p>เมื่อความรู้ด้านยา ผสมผสานกับทักษะการบริหาร เภสัชกรจะสามารถก้าวสู่บทบาทสำคัญในอุตสาหกรรมสุขภาพ:</p>
-                            <ul>
-                                <li><strong>Corporate Leader:</strong> ผู้บริหารระดับสูงในบริษัทชั้นนำและผู้ผลิตยาชั้นนำ</li>
-                                <li><strong>Market Access Specialist:</strong> ผู้นำนโยบายและวางแผนกลยุทธ์การนำยาใหม่เข้าสู่ตลาด</li>
-                                <li><strong>Regulatory &amp; Policy Expert:</strong> ผู้กำหนดนโยบายในหน่วยงานรัฐ เช่น อย., สปสช. หรือกรมต่างๆ</li>
-                                <li><strong>Entrepreneurship:</strong> ยกระดับสถานปฏิบัติการเภสัชกรรม (ร้านยา) สู่โมเดลธุรกิจสุขภาพที่ครบวงจรและยั่งยืน</li>
-                            </ul>
-                        </div>
-                        <button className={styles.infoBtnOutline}>ข้อมูลหลักสูตร</button>
-                    </div>
-                </div>
             </div>
 
-            {/* DOTS (Visual only) */}
-            <div className={styles.carouselDots}>
-                <span className={`${styles.dot} ${styles.dotActive}`}></span>
-                <span className={styles.dot}></span>
-                <span className={styles.dot}></span>
-                <span className={styles.dot}></span>
-                <span className={styles.dot}></span>
+            {/* 3 COURSE CARDS */}
+            <div className={styles.cardsRow}>
+
+                {/* CARD 1 */}
+                <div className={styles.courseCard}>
+                    <div className={styles.cardHeader}>
+                        <div className={styles.cardIcon}><CertIcon /></div>
+                        <div>
+                            <h3 className={styles.cardTitle}>หลักสูตรระยะสั้น</h3>
+                            <p className={styles.cardSubTitle}>(CERTIFICATE IN PHARMACOGENOMICS AND PRECISION MEDICINE)</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.cardBody}>
+                        <p className={styles.cardDesc}>
+                            เน้นการปฏิบัติจริงในเวชปฏิบัติ สำหรับเภสัชกรที่ต้องการต่อยอดทักษะการให้คำปรึกษาและแปลผลตรวจ
+                        </p>
+
+                        <div className={styles.detailSection}>
+                            <h4 className={styles.detailTitle}>รายละเอียด</h4>
+                            <ul className={styles.detailList}>
+                                <li>16 หน่วยกิต (ทฤษฎี 2 / ปฏิบัติ 14)</li>
+                                <li>ฝึกปฏิบัติจริงในสถานพยาบาลจริง</li>
+                                <li>ระยะเวลา: 4 เดือน (เต็มเวลา)</li>
+                                <li>คุณสมบัติ: เภสัชกรที่มีใบประกอบวิชาชีพ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button className={styles.downloadBtn}>
+                        <DownloadIcon /> ดาวน์โหลด
+                    </button>
+                </div>
+
+                {/* CARD 2 */}
+                <div className={styles.courseCard}>
+                    <div className={styles.cardHeader}>
+                        <div className={styles.cardIcon}><MedicalIcon /></div>
+                        <div>
+                            <h3 className={styles.cardTitle}>หลักสูตรแสดง<br />ความรู้ความชำนาญ</h3>
+                            <p className={styles.cardSubTitle}>PHARMACY RESIDENCY TRAINING</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.cardBody}>
+                        <p className={styles.cardDesc}>
+                            พื้นฐานที่ต้องรู้เพื่อก้าวทันนวัตกรรม สำหรับเภสัชกรทั่วไปและบุคลากรการแพทย์
+                        </p>
+
+                        <div className={styles.detailSection}>
+                            <h4 className={styles.detailTitle}>หัวข้อสำคัญ</h4>
+                            <ul className={styles.detailList}>
+                                <li>โครงสร้าง: 134 หน่วยกิต</li>
+                                <li>ฝึกระดับเข้มข้นในห้องปฏิบัติการและหอผู้ป่วยเฉพาะทาง</li>
+                                <li>คุณสมบัติ: เภสัชกรที่ผ่านเกณฑ์การคัดเลือก ตามมาตรฐานราชวิทยาลัยเภสัชกรรมฯ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button className={styles.downloadBtn}>
+                        <DownloadIcon /> ดาวน์โหลด
+                    </button>
+                </div>
+
+                {/* CARD 3 */}
+                <div className={styles.courseCard}>
+                    <div className={styles.cardHeader}>
+                        <div className={styles.cardIcon}><FlaskIcon /></div>
+                        <div>
+                            <h3 className={styles.cardTitle}>หลักสูตรอบรม<br />เชิงปฏิบัติการ</h3>
+                            <p className={styles.cardSubTitle}>PHARMACOGENOMICS FOR ALLIED HEALTH</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.cardBody}>
+                        <p className={styles.cardDesc}>
+                            พื้นฐานที่ต้องรู้เพื่อก้าวทันนวัตกรรม สำหรับเภสัชกรทั่วไปและบุคลากรการแพทย์
+                        </p>
+
+                        <div className={styles.detailSection}>
+                            <h4 className={styles.detailTitle}>รายละเอียด</h4>
+                            <ul className={styles.detailList}>
+                                <li>โครงสร้าง: อบรม 16 ชั่วโมง (2 วัน)</li>
+                                <li>ไฮไลท์: บูพื้นฐานความเข้าใจในเภสัชพันธุกรรม, การแพ้ยา, และจริยธรรมการแพทย์เฉพาะบุคคล</li>
+                                <li>คุณสมบัติ: เภสัชกร, บุคลากรสหวิชาชีพ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button className={styles.downloadBtn}>
+                        <DownloadIcon /> ดาวน์โหลด
+                    </button>
+                </div>
+
             </div>
+
+            {/*หลักสูตรกลาง*/}
+            {/* HEADING */}
+            <div className={styles.rowHeader}>
+                <h2 className={styles.rowTitle}>หลักสูตรระยะกลาง</h2>
+
+                <button className={styles.viewAllBtn}>ดูทั้งหมด <FaChevronRight style={{ fontSize: '10px', marginLeft: '4px' }} /></button>
+
+            </div>
+
+            {/* 3 COURSE CARDS */}
+            <div className={styles.cardsRow}>
+
+                {/* CARD 1 */}
+                <div className={styles.courseCard}>
+                    <div className={styles.cardHeader}>
+                        <div className={styles.cardIcon}><CertIcon /></div>
+                        <div>
+                            <h3 className={styles.cardTitle}>หลักสูตรระยะสั้น</h3>
+                            <p className={styles.cardSubTitle}>(CERTIFICATE IN PHARMACOGENOMICS AND PRECISION MEDICINE)</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.cardBody}>
+                        <p className={styles.cardDesc}>
+                            เน้นการปฏิบัติจริงในเวชปฏิบัติ สำหรับเภสัชกรที่ต้องการต่อยอดทักษะการให้คำปรึกษาและแปลผลตรวจ
+                        </p>
+
+                        <div className={styles.detailSection}>
+                            <h4 className={styles.detailTitle}>รายละเอียด</h4>
+                            <ul className={styles.detailList}>
+                                <li>16 หน่วยกิต (ทฤษฎี 2 / ปฏิบัติ 14)</li>
+                                <li>ฝึกปฏิบัติจริงในสถานพยาบาลจริง</li>
+                                <li>ระยะเวลา: 4 เดือน (เต็มเวลา)</li>
+                                <li>คุณสมบัติ: เภสัชกรที่มีใบประกอบวิชาชีพ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button className={styles.downloadBtn}>
+                        <DownloadIcon /> ดาวน์โหลด
+                    </button>
+                </div>
+
+                {/* CARD 2 */}
+                <div className={styles.courseCard}>
+                    <div className={styles.cardHeader}>
+                        <div className={styles.cardIcon}><MedicalIcon /></div>
+                        <div>
+                            <h3 className={styles.cardTitle}>หลักสูตรแสดง<br />ความรู้ความชำนาญ</h3>
+                            <p className={styles.cardSubTitle}>PHARMACY RESIDENCY TRAINING</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.cardBody}>
+                        <p className={styles.cardDesc}>
+                            พื้นฐานที่ต้องรู้เพื่อก้าวทันนวัตกรรม สำหรับเภสัชกรทั่วไปและบุคลากรการแพทย์
+                        </p>
+
+                        <div className={styles.detailSection}>
+                            <h4 className={styles.detailTitle}>หัวข้อสำคัญ</h4>
+                            <ul className={styles.detailList}>
+                                <li>โครงสร้าง: 134 หน่วยกิต</li>
+                                <li>ฝึกระดับเข้มข้นในห้องปฏิบัติการและหอผู้ป่วยเฉพาะทาง</li>
+                                <li>คุณสมบัติ: เภสัชกรที่ผ่านเกณฑ์การคัดเลือก ตามมาตรฐานราชวิทยาลัยเภสัชกรรมฯ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button className={styles.downloadBtn}>
+                        <DownloadIcon /> ดาวน์โหลด
+                    </button>
+                </div>
+
+                {/* CARD 3 */}
+                <div className={styles.courseCard}>
+                    <div className={styles.cardHeader}>
+                        <div className={styles.cardIcon}><FlaskIcon /></div>
+                        <div>
+                            <h3 className={styles.cardTitle}>หลักสูตรอบรม<br />เชิงปฏิบัติการ</h3>
+                            <p className={styles.cardSubTitle}>PHARMACOGENOMICS FOR ALLIED HEALTH</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.cardBody}>
+                        <p className={styles.cardDesc}>
+                            พื้นฐานที่ต้องรู้เพื่อก้าวทันนวัตกรรม สำหรับเภสัชกรทั่วไปและบุคลากรการแพทย์
+                        </p>
+
+                        <div className={styles.detailSection}>
+                            <h4 className={styles.detailTitle}>รายละเอียด</h4>
+                            <ul className={styles.detailList}>
+                                <li>โครงสร้าง: อบรม 16 ชั่วโมง (2 วัน)</li>
+                                <li>ไฮไลท์: บูพื้นฐานความเข้าใจในเภสัชพันธุกรรม, การแพ้ยา, และจริยธรรมการแพทย์เฉพาะบุคคล</li>
+                                <li>คุณสมบัติ: เภสัชกร, บุคลากรสหวิชาชีพ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button className={styles.downloadBtn}>
+                        <DownloadIcon /> ดาวน์โหลด
+                    </button>
+                </div>
+
+            </div>
+            
+
+
+            {/*หลักระยะยาว*/}
+            <div className={styles.rowHeader}>
+                <h2 className={styles.rowTitle}>หลักสูตรระยะสั้น</h2>
+
+                <button className={styles.viewAllBtn}>ดูทั้งหมด <FaChevronRight style={{ fontSize: '10px', marginLeft: '4px' }} /></button>
+
+            </div>
+
+            {/* 3 COURSE CARDS */}
+            <div className={styles.cardsRow}>
+
+                {/* CARD 1 */}
+                <div className={styles.courseCard}>
+                    <div className={styles.cardHeader}>
+                        <div className={styles.cardIcon}><CertIcon /></div>
+                        <div>
+                            <h3 className={styles.cardTitle}>หลักสูตรระยะยาว</h3>
+                            <p className={styles.cardSubTitle}>(CERTIFICATE IN PHARMACOGENOMICS AND PRECISION MEDICINE)</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.cardBody}>
+                        <p className={styles.cardDesc}>
+                            เน้นการปฏิบัติจริงในเวชปฏิบัติ สำหรับเภสัชกรที่ต้องการต่อยอดทักษะการให้คำปรึกษาและแปลผลตรวจ
+                        </p>
+
+                        <div className={styles.detailSection}>
+                            <h4 className={styles.detailTitle}>รายละเอียด</h4>
+                            <ul className={styles.detailList}>
+                                <li>16 หน่วยกิต (ทฤษฎี 2 / ปฏิบัติ 14)</li>
+                                <li>ฝึกปฏิบัติจริงในสถานพยาบาลจริง</li>
+                                <li>ระยะเวลา: 4 เดือน (เต็มเวลา)</li>
+                                <li>คุณสมบัติ: เภสัชกรที่มีใบประกอบวิชาชีพ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button className={styles.downloadBtn}>
+                        <DownloadIcon /> ดาวน์โหลด
+                    </button>
+                </div>
+
+                {/* CARD 2 */}
+                <div className={styles.courseCard}>
+                    <div className={styles.cardHeader}>
+                        <div className={styles.cardIcon}><MedicalIcon /></div>
+                        <div>
+                            <h3 className={styles.cardTitle}>หลักสูตรแสดง<br />ความรู้ความชำนาญ</h3>
+                            <p className={styles.cardSubTitle}>PHARMACY RESIDENCY TRAINING</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.cardBody}>
+                        <p className={styles.cardDesc}>
+                            พื้นฐานที่ต้องรู้เพื่อก้าวทันนวัตกรรม สำหรับเภสัชกรทั่วไปและบุคลากรการแพทย์
+                        </p>
+
+                        <div className={styles.detailSection}>
+                            <h4 className={styles.detailTitle}>หัวข้อสำคัญ</h4>
+                            <ul className={styles.detailList}>
+                                <li>โครงสร้าง: 134 หน่วยกิต</li>
+                                <li>ฝึกระดับเข้มข้นในห้องปฏิบัติการและหอผู้ป่วยเฉพาะทาง</li>
+                                <li>คุณสมบัติ: เภสัชกรที่ผ่านเกณฑ์การคัดเลือก ตามมาตรฐานราชวิทยาลัยเภสัชกรรมฯ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button className={styles.downloadBtn}>
+                        <DownloadIcon /> ดาวน์โหลด
+                    </button>
+                </div>
+
+                {/* CARD 3 */}
+                <div className={styles.courseCard}>
+                    <div className={styles.cardHeader}>
+                        <div className={styles.cardIcon}><FlaskIcon /></div>
+                        <div>
+                            <h3 className={styles.cardTitle}>หลักสูตรอบรม<br />เชิงปฏิบัติการ</h3>
+                            <p className={styles.cardSubTitle}>PHARMACOGENOMICS FOR ALLIED HEALTH</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.cardBody}>
+                        <p className={styles.cardDesc}>
+                            พื้นฐานที่ต้องรู้เพื่อก้าวทันนวัตกรรม สำหรับเภสัชกรทั่วไปและบุคลากรการแพทย์
+                        </p>
+
+                        <div className={styles.detailSection}>
+                            <h4 className={styles.detailTitle}>รายละเอียด</h4>
+                            <ul className={styles.detailList}>
+                                <li>โครงสร้าง: อบรม 16 ชั่วโมง (2 วัน)</li>
+                                <li>ไฮไลท์: บูพื้นฐานความเข้าใจในเภสัชพันธุกรรม, การแพ้ยา, และจริยธรรมการแพทย์เฉพาะบุคคล</li>
+                                <li>คุณสมบัติ: เภสัชกร, บุคลากรสหวิชาชีพ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button className={styles.downloadBtn}>
+                        <DownloadIcon /> ดาวน์โหลด
+                    </button>
+                </div>
+
+            </div>
+
+           
 
             {/* ================= BOTTOM CERTIFICATION BANNER ================= */}
             <div className={styles.certFooter}>

@@ -112,12 +112,41 @@
 }
 
 /* ===================== RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+    .grid {
+        gap: 12px;
+    }
+    .logoCard {
+        padding: 24px 20px;
+    }
+    .infoCard {
+        padding: 16px;
+    }
+}
+
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
     }
-
     .logoCard {
         grid-row: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .logoImage {
+        width: 80px;
+    }
+    .quoteIcon {
+        font-size: 32px;
+    }
+    .logoTitle {
+        font-size: 14px;
+    }
+    .infoTitle {
+        font-size: 13px;
+    }
+    .logoDesc, .infoDesc {
+        font-size: 12px;
     }
 }
