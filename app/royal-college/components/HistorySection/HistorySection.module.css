@@ -82,12 +82,10 @@
 .timelineItem {
     display: flex;
     align-items: stretch;
-    border-bottom: 1px solid #e5e5da;
+   
 }
 
-.timelineItem:first-child {
-    border-top: 1px solid #e5e5da;
-}
+
 
 .yearBox {
     min-width: 220px;
