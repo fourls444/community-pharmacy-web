@@ -44,6 +44,7 @@ export default function Home() {
 
   return (
     <main>
+      <RegistrationModal />
       <Banner />
       <IntroSection />
       <div className={layoutStyles.container}>
@@ -55,7 +56,6 @@ export default function Home() {
       <HighlightSection />
       <MeetingSection />
       <NewsSection />
-      <RegistrationModal />
     </main>
   );
 }

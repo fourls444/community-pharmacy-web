@@ -1,6 +1,8 @@
 "use client";
 
+import { LuChevronDown, LuListFilter } from "react-icons/lu";
 import styles from "./IntroSection.module.css";
+import { FaSearch } from "react-icons/fa";
 
 export default function IntroSection() {
   return (
@@ -36,14 +38,28 @@ export default function IntroSection() {
           เพื่อเสริมสร้างระบบบริการสุขภาพที่มีคุณภาพและได้มาตรฐาน
         </p>
 
-        <div className={styles.statsRow}>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>20+</span>
-            <span className={styles.statLabel}>ปีแห่งประสบการณ์</span>
-          </div>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>1000+</span>
-            <span className={styles.statLabel}>สมาชิกวิทยาลัย</span>
+        {/* Search Card */}
+        <div className={styles.searchCard}>
+          <h3 className={styles.searchTitle}>ค้นหารายชื่อ</h3>
+          <p className={styles.searchSubtitle}>ผู้ประกอบวิชาชีพเภสัชกรรม</p>
+
+          <div className={styles.inputGroup}>
+            <div className={styles.dropdown}>
+              <LuListFilter className={styles.filterIcon} />
+              <span>เลขที่ใบอนุญาต</span>
+              <LuChevronDown className={styles.chevronIcon} />
+            </div>
+
+            <div className={styles.searchInputWrapper}>
+              <FaSearch className={styles.searchIcon} />
+              <input
+                type="text"
+                placeholder="ค้นหาเลขที่ใบอนุญาต"
+                className={styles.searchInput}
+              />
+            </div>
+
+            <button className={styles.searchButton}>ค้นหา</button>
           </div>
         </div>
       </div>
