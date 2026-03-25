@@ -1,5 +1,5 @@
 .container {
-    padding: 2.5rem 2rem;
+    padding: 4.5rem 2rem;
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 3rem;
@@ -17,14 +17,14 @@
         grid-template-columns: 1fr;
         gap: 2rem;
         margin: 0 auto;
-        padding: 2rem 1.5rem;
+        padding: 3rem 1.5rem;
     }
 }
 
 @media (max-width: 640px) {
     .container {
         margin: 0 auto;
-        padding: 1.5rem 1rem;
+        padding: 2.5rem 1rem;
         gap: 1.5rem;
     }
 }

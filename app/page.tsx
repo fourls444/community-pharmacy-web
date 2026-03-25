@@ -14,6 +14,7 @@ import ContactContent from "@/components/07_contact/ContactContent";
 import MeetingSection from "@/components/home/MeetingSection";
 import NewsSection from "@/components/home/NewsSection";
 import HighlightSection from "@/components/home/HighlightSection";
+import RegistrationModal from "@/components/ui/RegistrationModal";
 
 import layoutStyles from "@/components/home/HomeLayout.module.css";
 
@@ -54,6 +55,7 @@ export default function Home() {
       <HighlightSection />
       <MeetingSection />
       <NewsSection />
+      <RegistrationModal />
     </main>
   );
 }
