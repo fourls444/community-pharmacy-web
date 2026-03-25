@@ -36,10 +36,15 @@
 }
 
 .subtitle {
-  font-size: 1rem;
-  color: #666;
+  font-size: 0.95rem;
+  color: #d32f2f;
   margin-bottom: 30px;
   line-height: 1.5;
+  font-weight: 500;
+  background: #fffafa;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px dashed rgba(211, 47, 47, 0.3);
 }
 
 .form {

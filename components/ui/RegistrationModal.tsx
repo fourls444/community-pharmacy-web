@@ -46,9 +46,9 @@ const RegistrationModal = () => {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <h2 className={styles.title}>ยินดีต้อนรับ</h2>
+        <h2 className={styles.title}>เข้าสู่ระบบ</h2>
         <p className={styles.subtitle}>
-          เพื่อเข้าใช้งานเว็บไซต์ กรุณาระบุชื่อและนามสกุลของคุณ
+          ⚠️ เนื้อหาต่อไปนี้คือข้อมูลตัวอย่าง ห้ามนำไปเผยแพร่
         </p>
 
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
@@ -93,7 +93,7 @@ const RegistrationModal = () => {
           )}
 
           <button type="submit" className={styles.submitButton}>
-            เข้าสู่ระบบ
+            ตกลง
           </button>
         </form>
       </div>
