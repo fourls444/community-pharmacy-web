@@ -46,7 +46,7 @@ const RegistrationModal = () => {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <h2 className={styles.title}>เข้าสู่ระบบ</h2>
+        <h2 className={styles.title}>กรุณากรอก ชื่อ-นามสกุล<br />เพื่อเข้าสู่เว็บไซต์</h2>
         <p className={styles.subtitle}>
           ⚠️ เนื้อหาต่อไปนี้คือข้อมูลตัวอย่าง ห้ามนำไปเผยแพร่
         </p>
