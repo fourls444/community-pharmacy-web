@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import styles from "./HighlightSection.module.css";
@@ -14,6 +14,16 @@ const highlightImages = [
 
 export default function HighlightSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentIndex, isPaused]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % highlightImages.length);
@@ -27,8 +37,29 @@ export default function HighlightSection() {
     setCurrentIndex(index);
   };
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (centerY - y) / 10;
+    const rotateY = (x - centerX) / 10;
+    setRotation({ x: rotateX, y: rotateY });
+  };
+
+  const handleMouseLeave = () => {
+    setRotation({ x: 0, y: 0 });
+    setIsPaused(false);
+  };
+
   return (
     <section className={styles.highlightSection}>
+      {/* Decorative Blobs */}
+      <div className={styles.blob1}></div>
+      <div className={styles.blob2}></div>
+      
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
           <span className={styles.subtitle}>Highlight วิทยาลัยเภสัชกรรมชุมชน</span>
@@ -42,7 +73,11 @@ export default function HighlightSection() {
           </p>
         </div>
 
-        <div className={styles.sliderContainer}>
+        <div 
+          className={styles.sliderContainer}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={handleMouseLeave}
+        >
           <div className={styles.sliderWrapper}>
             {/* Navigation Arrows */}
             <button className={`${styles.navButton} ${styles.prevButton}`} onClick={prevSlide}>
@@ -55,17 +90,26 @@ export default function HighlightSection() {
             {/* Slides */}
             <div className={styles.slidesTrack}>
               {highlightImages.map((img, idx) => {
-                let position = "nextSlide";
-                if (idx === currentIndex) {
-                  position = "activeSlide";
+                let positionClass = styles.nextSlide;
+                const isActive = idx === currentIndex;
+
+                if (isActive) {
+                  positionClass = styles.activeSlide;
                 } else if (
                   idx === (currentIndex - 1 + highlightImages.length) % highlightImages.length
                 ) {
-                  position = "lastSlide";
+                  positionClass = styles.lastSlide;
                 }
 
                 return (
-                  <div key={idx} className={`${styles.slide} ${styles[position]}`}>
+                  <div 
+                    key={idx} 
+                    className={`${styles.slide} ${positionClass}`}
+                    onMouseMove={isActive ? handleMouseMove : undefined}
+                    style={isActive ? {
+                      transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale(1)`,
+                    } : undefined}
+                  >
                     <div className={styles.imageWrapper}>
                       <Image
                         src={img}
@@ -73,6 +117,7 @@ export default function HighlightSection() {
                         fill
                         className={styles.image}
                       />
+                      {isActive && <div className={styles.glassEffect}></div>}
                     </div>
                   </div>
                 );
