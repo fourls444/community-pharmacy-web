@@ -6,6 +6,7 @@ import { HiOutlineLocationMarker, HiOutlineCalendar, HiOutlineUsers, HiOutlineBo
 import { FaGraduationCap } from "react-icons/fa6";
 import styles from "./MeetingSection.module.css";
 
+// รายการข้อมูลวาระการประชุม (จำลอง)
 const meetingList = [
   {
     day: "2",
@@ -52,9 +53,13 @@ const meetingList = [
   },
 ];
 
+/**
+ * ส่วนแสดงรายการวาระการประชุม (Meetings & Events)
+ */
 export default function MeetingSection() {
   return (
     <section className={styles.meeting}>
+      {/* ส่วนหัวของ Section */}
       <header className={styles.header}>
         <h2 className={styles.title}>
           การประชุมวิทยาลัยคุ้มครองผู้บริโภคด้านยาและสุขภาพ
@@ -64,17 +69,21 @@ export default function MeetingSection() {
         </Link>
       </header>
 
+      {/* รายการวาระการประชุม */}
       <div className={styles.list}>
         {meetingList.map((meeting, index) => (
           <div key={index} className={styles.item}>
+            {/* ส่วนแสดงวันที่ (ฝั่งซ้าย) */}
             <div className={styles.date}>
               <span className={styles.day}>{meeting.day}</span>
               <span className={styles.month}>{meeting.month}</span>
             </div>
 
+            {/* ส่วนแสดงรายละเอียดเนื้อหา (กลาง) */}
             <div className={styles.content}>
               <div className={styles.titleWrapper}>
                 <h3 className={styles.meetingTitle}>{meeting.title}</h3>
+                {/* ป้ายกำกับคะแนน CPE (ถ้ามี) */}
                 {meeting.cpe && (
                   <div className={styles.cpeBadge}>
                     <FaGraduationCap className={styles.cpeIcon} />
@@ -83,6 +92,7 @@ export default function MeetingSection() {
                 )}
               </div>
 
+              {/* รายละเอียดเพิ่มเติม: สถานที่, วันที่, แท็กกลุ่มเป้าหมาย */}
               <div className={styles.details}>
                 <div className={styles.detailRow}>
                   <HiOutlineLocationMarker className={styles.icon} />
@@ -116,6 +126,7 @@ export default function MeetingSection() {
               </div>
             </div>
 
+            {/* ส่วนแสดงรูปภาพประกอบ (ขวา) */}
             <div className={styles.imageWrapper}>
               <Image
                 src={meeting.image}

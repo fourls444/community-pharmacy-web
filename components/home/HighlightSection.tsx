@@ -5,6 +5,7 @@ import Image from "next/image";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import styles from "./HighlightSection.module.css";
 
+// รายการรูปภาพสำหรับส่วน Highlight
 const highlightImages = [
   "/images/highlight/Container.png",
   "/images/highlight/Container (1).png",
@@ -12,11 +13,15 @@ const highlightImages = [
   "/images/highlight/Container (3).png",
 ];
 
+/**
+ * ส่วน Highlight แสดงสไลด์รูปภาพแบบ Interactive 3D
+ */
 export default function HighlightSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const [currentIndex, setCurrentIndex] = useState(0); // ลำดับภาพปัจจุบัน
+  const [isPaused, setIsPaused] = useState(false); // สถานะหยุดเล่นชั่วคราว (Auto-play pause)
+  const [rotation, setRotation] = useState({ x: 0, y: 0 }); // ค่าการหมุนภาพสำหรับเอฟเฟกต์ 3D
 
+  // จัดการ Auto-play ทุก 5 วินาที
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
@@ -25,18 +30,22 @@ export default function HighlightSection() {
     return () => clearInterval(timer);
   }, [currentIndex, isPaused]);
 
+  // เลื่อนไปสไลด์ถัดไป
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % highlightImages.length);
   };
 
+  // เลื่อนไปสไลด์ก่อนหน้า
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + highlightImages.length) % highlightImages.length);
   };
 
+  // เลือกสไลด์ตามลำดับที่ระบุ
   const setSlide = (index: number) => {
     setCurrentIndex(index);
   };
 
+  // คำนวณองศาการหมุนภาพตามตำแหน่งเมาส์ (3D Tilt Effect)
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -49,6 +58,7 @@ export default function HighlightSection() {
     setRotation({ x: rotateX, y: rotateY });
   };
 
+  // รีเซ็ตค่าการหมุนเมื่อเอาเมาส์ออก
   const handleMouseLeave = () => {
     setRotation({ x: 0, y: 0 });
     setIsPaused(false);
@@ -56,11 +66,12 @@ export default function HighlightSection() {
 
   return (
     <section className={styles.highlightSection}>
-      {/* Decorative Blobs */}
+      {/* องค์ประกอบพื้นหลังแบบฟุ้ง (Decorative Blobs) */}
       <div className={styles.blob1}></div>
       <div className={styles.blob2}></div>
       
       <div className={styles.container}>
+        {/* ส่วนหัวของ Section */}
         <div className={styles.sectionHeader}>
           <span className={styles.subtitle}>Highlight วิทยาลัยเภสัชกรรมชุมชน</span>
           <h2 className={styles.mainTitle}>
@@ -73,13 +84,14 @@ export default function HighlightSection() {
           </p>
         </div>
 
+        {/* ส่วนคอนเทนเนอร์ของสไลด์ */}
         <div 
           className={styles.sliderContainer}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={handleMouseLeave}
         >
           <div className={styles.sliderWrapper}>
-            {/* Navigation Arrows */}
+            {/* ปุ่มนำทาง (ซ้าย-ขวา) */}
             <button className={`${styles.navButton} ${styles.prevButton}`} onClick={prevSlide}>
               <BsChevronLeft />
             </button>
@@ -87,12 +99,13 @@ export default function HighlightSection() {
               <BsChevronRight />
             </button>
 
-            {/* Slides */}
+            {/* พื้นที่แสดงรูปภาพสไลด์แบบ 3 คอลัมน์ (แสดงเลเวล) */}
             <div className={styles.slidesTrack}>
               {highlightImages.map((img, idx) => {
                 let positionClass = styles.nextSlide;
                 const isActive = idx === currentIndex;
 
+                // กำหนดตำแหน่ง CSS ตามลำดับรูป
                 if (isActive) {
                   positionClass = styles.activeSlide;
                 } else if (
@@ -117,6 +130,7 @@ export default function HighlightSection() {
                         fill
                         className={styles.image}
                       />
+                      {/* เอฟเฟกต์กระจกบางๆ บนรูปที่ Active */}
                       {isActive && <div className={styles.glassEffect}></div>}
                     </div>
                   </div>
@@ -125,7 +139,7 @@ export default function HighlightSection() {
             </div>
           </div>
 
-          {/* Pagination Dots */}
+          {/* ส่วนปุ่มจุด (Pagination Dots) ด้านล่าง */}
           <div className={styles.pagination}>
             {highlightImages.map((_, idx) => (
               <button

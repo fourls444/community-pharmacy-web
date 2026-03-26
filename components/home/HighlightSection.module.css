@@ -1,3 +1,4 @@
+/* พื้นหลังหลักของส่วน Highlight */
 .highlightSection {
     padding: 6rem 0;
     width: 100%;
@@ -9,6 +10,7 @@
     position: relative;
 }
 
+/* ตกแต่งพื้นหลังด้วย Blobs ฟุ้งๆ (เคลื่อนไหวได้) */
 .blob1 {
     position: absolute;
     width: 300px;
@@ -35,6 +37,7 @@
     animation: float 20s infinite alternate-reverse ease-in-out;
 }
 
+/* อนิเมชั่นสำหรับการลอยตัวของ Blobs */
 @keyframes float {
     0% { transform: translate(0, 0) scale(1); }
     100% { transform: translate(50px, 50px) scale(1.1); }
@@ -80,6 +83,7 @@
     line-height: 1.6;
 }
 
+/* ส่วนควบคุมสไลเดอร์ */
 .sliderContainer {
     position: relative;
     width: 100%;
@@ -98,6 +102,7 @@
     align-items: center;
 }
 
+/* ปุ่มเลื่อนสไลด์ (ซ้าย-ขวา) */
 .navButton {
     position: absolute;
     width: 48px;
@@ -139,6 +144,7 @@
     align-items: center;
 }
 
+/* รูปแบบของสไลด์แต่ละใบ */
 .slide {
     position: absolute;
     width: 450px;
@@ -150,12 +156,14 @@
     will-change: transform, opacity;
 }
 
+/* สไลด์ที่กำลังแสดงหลัก */
 .activeSlide {
     opacity: 1;
     transform: scale(1);
     z-index: 5;
 }
 
+/* สไลด์ด้านข้าง (ลึกเข้าไป) */
 .lastSlide {
     opacity: 0.5;
     transform: translateX(-65%) scale(0.8);
@@ -170,6 +178,7 @@
     filter: blur(2px) brightness(0.8);
 }
 
+/* กรอบหุ้มรูปภาพ */
 .imageWrapper {
     width: 100%;
     height: 100%;
@@ -184,10 +193,12 @@
     transition: transform 0.8s ease;
 }
 
+/* ขยายรูปภาพเล็กน้อยเมื่อ Hover บนสไลด์ที่ Active */
 .activeSlide:hover .image {
     transform: scale(1.05);
 }
 
+/* เอฟเฟกต์กระจกซ้อนทับ */
 .glassEffect {
     position: absolute;
     top: 0;
@@ -203,6 +214,7 @@
     pointer-events: none;
 }
 
+/* ส่วนจุดนำทางด้านล่าง */
 .pagination {
     margin-top: 3rem;
     display: flex;
@@ -226,6 +238,7 @@
     background: #7b7b1e;
 }
 
+/* === Responsive === */
 @media (max-width: 1024px) {
     .mainTitle {
         font-size: 2.2rem;
@@ -263,6 +276,7 @@
         height: 280px;
     }
 
+    /* ซ่อนสไลด์ด้านข้างบนมือถือเพื่อประหยัดพื้นที่ */
     .lastSlide, .nextSlide {
         display: none;
     }

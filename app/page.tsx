@@ -18,9 +18,15 @@ import RegistrationModal from "@/components/ui/RegistrationModal";
 
 import layoutStyles from "@/components/home/HomeLayout.module.css";
 
+/**
+ * หน้าหลัก (Home Page) ของเว็บไซต์
+ * รวมรวบส่วนประกอบต่างๆ ของหน้าแรกและจัดการสถานะของเนื้อหาในส่วน Tab
+ */
 export default function Home() {
+  // สถานะเก็บ ID ของเนื้อหาที่กำลังแสดงผล (อ้างอิงจาก Sidebar)
   const [activeTab, setActiveTab] = useState("history");
 
+  // ฟังก์ชันสำหรับเลือก Component เนื้อหามาแสดงตาม Tab ที่ถูกเลือก
   const renderContent = () => {
     switch (activeTab) {
       case "history":
@@ -44,17 +50,30 @@ export default function Home() {
 
   return (
     <main>
+      {/* โมดัลสำหรับลงทะเบียน/เก็บชื่อผู้ใช้ */}
       <RegistrationModal />
+      
+      {/* ส่วนแบนเนอร์ด้านบนสุด */}
       <Banner />
+      
+      {/* ส่วนแนะนำ (Intro) และการค้นหารายชื่อ */}
       <IntroSection />
+      
+      {/* ส่วนเลย์เอาต์หลักที่มี Sidebar และเนื้อหาแบบเปลี่ยนตาม Tab */}
       <div className={layoutStyles.container}>
         <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
         <div className={layoutStyles.contentArea}>
           {renderContent()}
         </div>
       </div>
+      
+      {/* ส่วนแสดงไฮไลท์ (สไลเดอร์แบบ Interactive) */}
       <HighlightSection />
+      
+      {/* ส่วนรวบรวมวาระการประชุม */}
       <MeetingSection />
+      
+      {/* ส่วนข่าวประชาสัมพันธ์ */}
       <NewsSection />
     </main>
   );

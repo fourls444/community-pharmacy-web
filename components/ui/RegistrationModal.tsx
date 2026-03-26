@@ -3,6 +3,10 @@
 import { useState, useEffect } from "react";
 import styles from "./RegistrationModal.module.css";
 
+/**
+ * แล็ปท็อป (Modal) สำหรับลงทะเบียนผู้ใช้งานเบื้องต้น
+ * บังคับให้กรอกชื่อ-นามสกุลก่อนเข้าชมเนื้อหาเว็บไซต์
+ */
 const RegistrationModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [firstName, setFirstName] = useState("");
@@ -11,20 +15,24 @@ const RegistrationModal = () => {
   const [triedSubmit, setTriedSubmit] = useState(false);
 
   useEffect(() => {
-    // Always show modal on refresh/mount and clear existing data
+    // แสดง Modal ทุกครั้งที่รีเฟรชหน้าจอ และล้างข้อมูลเก่าใน Chrome Storage
     localStorage.removeItem("user_registration_info");
     setIsOpen(true);
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden"; // ป้องกันการ Scroll พื้นหลังขณะ Modal เปิด
 
     return () => {
       document.body.style.overflow = "auto";
     };
   }, []);
 
+  /**
+   * จัดการการส่งฟอร์มลงทะเบียน
+   */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setTriedSubmit(true);
 
+    // ตรวจสอบความถูกต้องของข้อมูล (Validation)
     if (!firstName.trim() || !lastName.trim()) {
       setError("กรุณากรอกข้อมูลให้ครบถ้วนก่อนเข้าใช้งาน");
       return;
@@ -36,6 +44,7 @@ const RegistrationModal = () => {
       timestamp: new Date().toISOString(),
     };
 
+    // บันทึกข้อมูลลงใน LocalStorage และปิด Modal
     localStorage.setItem("user_registration_info", JSON.stringify(userInfo));
     setIsOpen(false);
     document.body.style.overflow = "auto";
@@ -54,6 +63,7 @@ const RegistrationModal = () => {
           กรุณาเปิดบนคอมพิวเตอร์
         </p>
 
+        {/* ฟอร์มกรอกข้อมูลผู้ใช้งาน */}
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
           <div className={styles.inputGroup}>
             <label className={styles.label} htmlFor="firstName">
@@ -89,6 +99,7 @@ const RegistrationModal = () => {
             />
           </div>
 
+          {/* แสดงข้อความแจ้งเตือนข้อผิดพลาด */}
           {error && (
             <div className={styles.error}>
               ⚠️ {error}

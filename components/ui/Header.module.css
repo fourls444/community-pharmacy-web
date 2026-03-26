@@ -1,3 +1,4 @@
+/* ส่วนหัวของหน้าเว็บ ติดหนึบด้านบน (Sticky) */
 .header {
     width: 100%;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -8,6 +9,7 @@
     background-color: #686805;
 }
 
+/* แถบคอนเทนเนอร์ใน Header */
 .topBanner {
     color: white;
     padding: 0.75rem 2rem;
@@ -22,6 +24,7 @@
     }
 }
 
+/* ส่วนแสดงโลโก้และชื่อตราสินค้า */
 .brandArea {
     display: flex;
     align-items: center;
@@ -59,7 +62,7 @@
     margin: 0;
 }
 
-/* === Responsive === */
+/* === ปรับแต่ง Responsive มือถือและแท็บเล็ต === */
 @media (max-width: 768px) {
     .topBanner {
         padding: 1rem 1.5rem;

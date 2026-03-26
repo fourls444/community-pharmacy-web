@@ -1,13 +1,16 @@
+/* คอนเทนเนอร์หลักของ Sidebar */
 .sidebar {
     width: 280px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    /* ทำให้ Sidebar เลื่อนตามเนื้อหา (Sticky) เฉพาะบน Desktop */
     position: sticky;
     top: 6rem;
     align-self: flex-start;
 }
 
+/* หัวข้อคำขวัญใน Sidebar */
 .sidebarTitle {
     font-size: 18px;
     margin-bottom: 24px;
@@ -16,6 +19,7 @@
     font-weight: 600;
 }
 
+/* รายการปุ่มเมนู */
 .menuList {
     list-style: none;
     padding: 0;
@@ -25,6 +29,7 @@
     gap: 10px;
 }
 
+/* รูปแบบปุ่มเมนูทั่วไป */
 .menuItem {
     width: 100%;
     padding: 14px 20px;
@@ -39,16 +44,19 @@
     transition: all 0.2s ease;
 }
 
+/* เอฟเฟกต์เมื่อวางเมาส์เหนือปุ่มเมนู */
 .menuItem:hover {
     background: #e8e8d8;
 }
 
+/* รูปแบบปุ่มเมนูที่กำลังเลือก (Active) */
 .activeItem {
     background: linear-gradient(to right, #72721B 0%, #C5C58C 100%);
     color: white !important;
     font-weight: 600;
 }
 
+/* ปรับแต่งการแสดงผลสำหรับหน้าจอ Tablet และ Mobile */
 @media (max-width: 1024px) {
     .sidebar {
         width: 100%;
@@ -59,6 +67,7 @@
         align-self: stretch;
     }
 
+    /* เปลี่ยนเมนูเป็นแนวนอนและเลื่อนได้ (Scroll) บนมือถือ */
     .menuList {
         flex-direction: row;
         overflow-x: auto;

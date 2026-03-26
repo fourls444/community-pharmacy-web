@@ -1,3 +1,4 @@
+/* คอนเทนเนอร์หลักของส่วนข่าวสาร */
 .news {
     position: relative;
     padding: 6rem 2rem;
@@ -5,7 +6,7 @@
     overflow: hidden;
 }
 
-/* Background Decoration */
+/* องค์ประกอบพื้นหลังแบบกราฟิกคลื่น */
 .bgDecoration {
     position: absolute;
     top: 0;
@@ -23,6 +24,7 @@
     transform: scale(1.02); 
 }
 
+/* คอนเทนเนอร์จัดตำแหน่งเนื้อหา */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -30,7 +32,7 @@
     z-index: 1;
 }
 
-/* Common Header Styles */
+/* ส่วนหัวของ News Section */
 .header {
     display: flex;
     justify-content: space-between;
@@ -44,6 +46,7 @@
     color: #1e293b;
 }
 
+/* ปุ่มควบคุมการเลื่อน (Arrow Buttons) */
 .controls {
     display: flex;
     gap: 1rem;
@@ -69,7 +72,7 @@
     border-color: #4b5320;
 }
 
-/* Featured Section */
+/* ส่วนการแสดงเรื่องเด่น (Featured News Card) */
 .featured {
     background: white;
     border-radius: 24px;
@@ -95,6 +98,7 @@
     gap: 1.5rem;
 }
 
+/* ป้ายกำกับหมวดหมู่ข่าว */
 .category {
     background: #4b5320;
     color: white;
@@ -134,6 +138,7 @@
     color: white;
 }
 
+/* จุดนำทาง (Pagination Dots) */
 .pagination {
     display: flex;
     gap: 0.75rem;
@@ -155,13 +160,14 @@
     border-radius: 10px;
 }
 
-/* News Grid */
+/* ตารางแสดงข่าวสารล่าสุด (Grid Layout) */
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
+/* การ์ดข่าวสารแต่ละใบ */
 .card {
     background: white;
     border-radius: 20px;
@@ -230,6 +236,7 @@
     color: #6b6b1d;
 }
 
+/* === ปรับแต่ง Responsive มือถือและแท็บเล็ต === */
 @media (max-width: 1024px) {
     .news {
         padding: 4rem 1.5rem;

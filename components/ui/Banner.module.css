@@ -1,3 +1,4 @@
+/* ส่วนแบนเนอร์หลักพร้อมภาพพื้นหลังและ Gradient */
 .banner {
     width: 100%;
     height: 400px;
@@ -14,6 +15,7 @@
     overflow: hidden;
 }
 
+/* คอนเทนเนอร์จัดวางโลโก้และข้อความ */
 .content {
     display: flex;
     align-items: center;
@@ -22,6 +24,7 @@
     width: 100%;
 }
 
+/* โลโก้วิทยาลัยทรงกลม */
 .logo {
     width: 180px;
     height: 180px;
@@ -38,6 +41,7 @@
     flex-direction: column;
 }
 
+/* ชื่อวชิรพ. ตัวหนา */
 .title {
     font-size: 3rem;
     font-weight: 700;
@@ -46,6 +50,7 @@
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* ชื่อภาษาอังกฤษ */
 .subtitle {
     font-size: 1.5rem;
     font-weight: 400;
@@ -55,7 +60,7 @@
     letter-spacing: 0.025em;
 }
 
-/* === Responsive === */
+/* === ปรับแต่ง Responsive มือถือและแท็บเล็ต === */
 @media (max-width: 1024px) {
     .banner {
         padding: 0 2.5rem;

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { HiChevronLeft, HiChevronRight, HiOutlineChevronRight } from "react-icons/hi";
 import styles from "./NewsSection.module.css";
 
+// รายการข่าวสารล่าสุด (จำลอง)
 const newsList = [
   {
     category: "ข่าวประชาสัมพันธ์",
@@ -29,10 +30,13 @@ const newsList = [
   },
 ];
 
+/**
+ * ส่วนแสดงข่าวสารและเรื่องเด่น (News & Highlights)
+ */
 export default function NewsSection() {
   return (
     <section className={styles.news}>
-      {/* Decorative Wavy Background */}
+      {/* ส่วนตกแต่งพื้นหลังแบบคลื่น (SVG Wavy Background) */}
       <div className={styles.bgDecoration}>
         <svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
           <defs>
@@ -56,7 +60,7 @@ export default function NewsSection() {
       </div>
 
       <div className={styles.container}>
-        {/* Featured Slider - Story Highlights */}
+        {/* ส่วนแสดงเรื่องเด่น (Featured Post) พร้อมปุ่มปรับเปลี่ยน */}
         <div className={styles.header}>
           <h2 className={styles.sectionTitle}>เรื่องเด่นวิทยาลัยคุ้มครองผู้บริโภคด้านยาและสุขภาพ</h2>
           <div className={styles.controls}>
@@ -85,14 +89,14 @@ export default function NewsSection() {
           </div>
         </div>
 
-        {/* Pagination Dots for Slider */}
+        {/* จุดนำทางสไลด์เรื่องเด่น */}
         <div className={styles.pagination}>
           <span className={styles.activeDot}></span>
           <span className={styles.dot}></span>
           <span className={styles.dot}></span>
         </div>
 
-        {/* Latest News Grid */}
+        {/* ส่วนแสดงรายการข่าวสารล่าสุด (แบบ Grid) */}
         <div className={styles.header}>
           <h2 className={styles.sectionTitle}>ข่าวสารวิทยาลัยคุ้มครองผู้บริโภคด้านยาและสุขภาพ</h2>
           <Link href="/news" className={styles.seeAll}>

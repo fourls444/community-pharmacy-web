@@ -1,17 +1,20 @@
+/* คอนเทนเนอร์หลักของส่วน Intro */
 .container {
     grid-template-columns: 1fr 1.5fr;
-    align-items: stretch;
+    align-items: stretch; /* ให้รูปภาพสูงเท่ากับเนื้อหาข้อความ */
     gap: 3rem;
     padding: 60px 80px;
     display: grid;
 }
 
+/* ส่วนพื้นที่รูปภาพ */
 .imageSection {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
+/* การ์ดใส่รูปภาพพร้อมเงาและมุมมน */
 .imageCard {
     width: 100%;
     height: 100%;
@@ -22,12 +25,14 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* รูปภาพหลัก ปรับให้คลุมพื้นที่ (cover) */
 .image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* เลเยอร์ข้อความบนรูปภาพ (Overlay) */
 .imageOverlay {
     position: absolute;
     bottom: 0;
@@ -50,12 +55,14 @@
     margin-top: 5px;
 }
 
+/* ส่วนพื้นที่ข้อความด้านขวา */
 .contentSection {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
+/* หัวข้อพาดหัวใหญ่ */
 .headline {
     font-size: 1.75rem;
     font-weight: 700;
@@ -64,6 +71,7 @@
     margin: 0;
 }
 
+/* เส้นคั่นตกแต่ง */
 .divider {
     width: 60px;
     height: 4px;
@@ -71,6 +79,7 @@
     border-radius: 2px;
 }
 
+/* ข้อความอธิบายรายละเอียด */
 .description {
     font-size: 1.05rem;
     color: #475569;
@@ -78,6 +87,7 @@
     margin: 0;
 }
 
+/* การ์ดส่วนค้นหารายชื่อ */
 .searchCard {
     background: white;
     border-radius: 20px;
@@ -98,6 +108,7 @@
     margin-bottom: 2rem;
 }
 
+/* กลุ่ม Input สำหรับค้นหา */
 .inputGroup {
     display: flex;
     gap: 1rem;
@@ -105,6 +116,7 @@
     width: 100%;
 }
 
+/* ตัวเลือก Dropdown ประเภทการค้นหา */
 .dropdown {
     display: flex;
     align-items: center;
@@ -121,25 +133,29 @@
     min-width: 180px;
 }
 
-.dropdown span {
-    white-space: nowrap;
-}
-
 .dropdown:hover {
     border-color: #cbd5e1;
 }
 
+/* ข้อความใน Dropdown */
+.dropdown span {
+    white-space: nowrap;
+}
+
+/* ไอคอนตัวกรองใน Dropdown */
 .filterIcon {
     font-size: 1.1rem;
     color: #64748b;
 }
 
+/* ไอคอนลูกศรชี้ลงใน Dropdown */
 .chevronIcon {
     margin-left: auto;
     color: #94a3b8;
     font-size: 1rem;
 }
 
+/* ส่วนช่องกรอกคำค้นหา */
 .searchInputWrapper {
     position: relative;
     flex: 1;
@@ -162,6 +178,7 @@
     color: #94a3b8;
 }
 
+/* ปุ่มกดค้นหา */
 .searchButton {
     background-color: #6c6c19;
     color: white;
@@ -178,7 +195,7 @@
     background-color: #555514;
 }
 
-/* === Responsive === */
+/* === ปรับแต่ง Responsive มือถือและแท็บเล็ต === */
 @media (max-width: 1024px) {
     .container {
         grid-template-columns: 1fr;
@@ -237,6 +254,7 @@
         margin: 0 auto;
     }
 
+    /* จัดตำแหน่งข้อความของส่วนค้นหาให้อยู่ตรงกลางบนมือถือ */
     .searchTitle {
         font-size: 1.25rem;
         text-align: center;
@@ -254,6 +272,7 @@
         border-radius: 24px;
     }
 
+    /* ปรับขนาด Overlay บนมือถือขนาดเล็ก */
     .imageOverlay {
         padding: 1.25rem;
     }
