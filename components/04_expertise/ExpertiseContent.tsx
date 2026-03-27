@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./Expertise.module.css";
 
 const expertiseData = [
@@ -8,6 +9,7 @@ const expertiseData = [
     title: "สาขา 1",
     description: "เภสัชชุมชน",
     image: "/images/expertise/img1.png",
+    link: "/expertise-detail",
   },
   {
     id: 2,
@@ -46,17 +48,27 @@ export default function ExpertiseContent() {
     <section className={styles.expertiseSection}>
       <h2 className={styles.title}>สาขาความเชี่ยวชาญ</h2>
       <div className={styles.expertiseGrid}>
-        {expertiseData.map((item) => (
-          <div key={item.id} className={styles.card}>
-            <div className={styles.imageBox}>
-              <img src={item.image} alt={item.title} className={styles.image} />
+        {expertiseData.map((item) => {
+          const content = (
+            <div key={item.id} className={styles.card}>
+              <div className={styles.imageBox}>
+                <img src={item.image} alt={item.title} className={styles.image} />
+              </div>
+              <div className={styles.cardBody}>
+                <h3 className={styles.cardTitle}>{item.title}</h3>
+                <p className={styles.cardDesc}>{item.description}</p>
+              </div>
             </div>
-            <div className={styles.cardBody}>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <p className={styles.cardDesc}>{item.description}</p>
-            </div>
-          </div>
-        ))}
+          );
+
+          return item.link ? (
+            <Link key={item.id} href={item.link} className={styles.linkWrapper}>
+              {content}
+            </Link>
+          ) : (
+            content
+          );
+        })}
       </div>
     </section>
   );
