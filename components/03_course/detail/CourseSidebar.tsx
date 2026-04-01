@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { 
   FaFileArrowDown, 
   FaBookOpen, 
@@ -22,6 +22,27 @@ interface CourseSidebarProps {
 }
 
 export default function CourseSidebar({ ctaTitle, ctaSubtitle, infoItems, highlights }: CourseSidebarProps) {
+  const highlightRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (highlightRef.current) {
+      observer.observe(highlightRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <aside className={styles.sidebar}>
       {/* 💳 CTA Card */}
@@ -55,9 +76,12 @@ export default function CourseSidebar({ ctaTitle, ctaSubtitle, infoItems, highli
       </div>
 
       {/* Sidebar Card: Highlights */}
-      <div className={styles.sidebarCard}>
+      <div 
+        ref={highlightRef}
+        className={`${styles.sidebarCard} ${styles.revealing} ${isVisible ? styles.revealingVisible : ""}`}
+      >
         <h3 className={styles.sidebarTitle}>จุดเด่น</h3>
-        <ul className={styles.highlightList}>
+        <ul className={`${styles.highlightList} ${styles.revealStagger} ${isVisible ? styles.revealStaggerVisible : ""}`}>
           {highlights.map((text, i) => (
             <li key={i} className={styles.highlightItem}>
               <FaCircleCheck className={styles.circleCheckIcon} />

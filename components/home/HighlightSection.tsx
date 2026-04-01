@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import styles from "./HighlightSection.module.css";
@@ -20,6 +20,10 @@ export default function HighlightSection() {
   const [currentIndex, setCurrentIndex] = useState(0); // ลำดับภาพปัจจุบัน
   const [isPaused, setIsPaused] = useState(false); // สถานะหยุดเล่นชั่วคราว (Auto-play pause)
   const [rotation, setRotation] = useState({ x: 0, y: 0 }); // ค่าการหมุนภาพสำหรับเอฟเฟกต์ 3D
+  
+  // 📸 Refs สำหรับ Scroll Reveal Animation
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   // จัดการ Auto-play ทุก 5 วินาที
   useEffect(() => {
@@ -29,6 +33,23 @@ export default function HighlightSection() {
     }, 5000);
     return () => clearInterval(timer);
   }, [currentIndex, isPaused]);
+
+  // ✨ จัดการ Scroll Reveal Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // อัปเดตสถานะการมองเห็น (เข้าหรือออก)
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   // เลื่อนไปสไลด์ถัดไป
   const nextSlide = () => {
@@ -65,33 +86,34 @@ export default function HighlightSection() {
   };
 
   return (
-    <section className={styles.highlightSection}>
-      {/* องค์ประกอบพื้นหลังแบบฟุ้ง (Decorative Blobs) */}
+    <section ref={containerRef} className={styles.highlightSection}>
+      {/* 🔮 องค์ประกอบพื้นหลังแบบฟุ้ง (Decorative Blobs) */}
       <div className={styles.blob1}></div>
       <div className={styles.blob2}></div>
       
       <div className={styles.container}>
-        {/* ส่วนหัวของ Section */}
+        {/* 📝 ส่วนหัวของ Section พร้อมแอนิเมชั่น "Reveal from Blur" */}
         <div className={styles.sectionHeader}>
-          <span className={styles.subtitle}>Highlight วิทยาลัยเภสัชกรรมชุมชน</span>
-          <h2 className={styles.mainTitle}>
+          <span className={`${styles.subtitle} ${isVisible ? styles.artisticRevealTextActive : styles.artisticRevealText}`} style={{ transitionDelay: '0.1s' }}>
+            Highlight วิทยาลัยเภสัชกรรมชุมชน
+          </span>
+          <h2 className={`${styles.mainTitle} ${isVisible ? styles.artisticRevealTextActive : styles.artisticRevealText}`} style={{ transitionDelay: '0.25s' }}>
             “วิทยาลัยเภสัชกรรมชุมชน: <br />
             ยกระดับการดูแลสุขภาพปฐมภูมิ”
           </h2>
-          <p className={styles.description}>
+          <p className={`${styles.description} ${isVisible ? styles.artisticRevealTextActive : styles.artisticRevealText}`} style={{ transitionDelay: '0.4s' }}>
             เรามุ่งมั่นพัฒนา ‘ร้านยาชุมชน’ ให้เป็นศูนย์กลางสุขภาพที่เข้าถึงง่าย <br />
             ให้คำปรึกษาและส่งมอบยาอย่างถูกต้อง แม่นยำ และใส่ใจ
           </p>
         </div>
 
-        {/* ส่วนคอนเทนเนอร์ของสไลด์ */}
+        {/* 🖼️ ส่วนสไลเดอร์คอนเทนเนอร์พร้อมแอนิเมชั่น "Perspective Reveal" */}
         <div 
-          className={styles.sliderContainer}
+          className={`${styles.sliderContainer} ${isVisible ? styles.artisticReveal3DActive : styles.artisticReveal3D}`}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={handleMouseLeave}
         >
           <div className={styles.sliderWrapper}>
-            {/* ปุ่มนำทาง (ซ้าย-ขวา) */}
             <button className={`${styles.navButton} ${styles.prevButton}`} onClick={prevSlide}>
               <BsChevronLeft />
             </button>
@@ -99,20 +121,13 @@ export default function HighlightSection() {
               <BsChevronRight />
             </button>
 
-            {/* พื้นที่แสดงรูปภาพสไลด์แบบ 3 คอลัมน์ (แสดงเลเวล) */}
             <div className={styles.slidesTrack}>
               {highlightImages.map((img, idx) => {
                 let positionClass = styles.nextSlide;
                 const isActive = idx === currentIndex;
 
-                // กำหนดตำแหน่ง CSS ตามลำดับรูป
-                if (isActive) {
-                  positionClass = styles.activeSlide;
-                } else if (
-                  idx === (currentIndex - 1 + highlightImages.length) % highlightImages.length
-                ) {
-                  positionClass = styles.lastSlide;
-                }
+                if (isActive) positionClass = styles.activeSlide;
+                else if (idx === (currentIndex - 1 + highlightImages.length) % highlightImages.length) positionClass = styles.lastSlide;
 
                 return (
                   <div 
@@ -124,13 +139,7 @@ export default function HighlightSection() {
                     } : undefined}
                   >
                     <div className={styles.imageWrapper}>
-                      <Image
-                        src={img}
-                        alt={`Highlight ${idx + 1}`}
-                        fill
-                        className={styles.image}
-                      />
-                      {/* เอฟเฟกต์กระจกบางๆ บนรูปที่ Active */}
+                      <Image src={img} alt={`Highlight ${idx + 1}`} fill className={styles.image} />
                       {isActive && <div className={styles.glassEffect}></div>}
                     </div>
                   </div>
@@ -139,7 +148,6 @@ export default function HighlightSection() {
             </div>
           </div>
 
-          {/* ส่วนปุ่มจุด (Pagination Dots) ด้านล่าง */}
           <div className={styles.pagination}>
             {highlightImages.map((_, idx) => (
               <button

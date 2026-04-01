@@ -519,16 +519,16 @@
 }
 
 .branchTag {
-  background: #f1f5f9;
-  color: #64748b;
-  font-size: 0.75rem;
+  background: #f1f8e9;
+  color: #689f38;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 0.3rem 0.8rem;
-  border-radius: 6px;
+  padding: 0.35rem 0.8rem;
+  border-radius: 100px;
 }
 
 .courseCode {
-  color: #94a3b8;
+  color: #adb5bd;
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -542,51 +542,61 @@
 }
 
 .courseCardDesc {
-  font-size: 0.95rem;
-  color: #64748b;
+  font-size: 0.9rem;
+  color: #888;
   line-height: 1.6;
   margin-bottom: 2rem;
 }
 
 .cardStats {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 1.25rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid #f1f1f1;
 }
 
 .statItem {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.statLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-size: 0.85rem;
-  color: #64748b;
+  color: #666;
 }
 
 .statValue {
   font-weight: 700;
-  color: #334155;
+  color: #333;
 }
 
 .detailBtn {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.75rem;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #334155;
+  color: #333;
   background: white;
-  border: 1px solid #e2e8f0;
-  padding: 0.6rem 1.25rem;
-  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 0.85rem;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s;
+  width: 100%;
 }
 
 .detailBtn:hover {
-  background: #f8fafc;
-  border-color: #cbd5e1;
+  background: #f8f9fa;
+  border-color: #cbaf54;
+  color: #cbaf54;
 }
 
 /* --- Responsive --- */
@@ -637,3 +647,38 @@
     font-size: 1.8rem;
   }
 }
+
+/* --- Reveal Animations --- */
+.revealing {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.revealingVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay for list items */
+.revealStagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.revealStaggerVisible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.revealStaggerVisible > *:nth-child(1) { transition-delay: 0.05s; }
+.revealStaggerVisible > *:nth-child(2) { transition-delay: 0.1s; }
+.revealStaggerVisible > *:nth-child(3) { transition-delay: 0.15s; }
+.revealStaggerVisible > *:nth-child(4) { transition-delay: 0.2s; }
+.revealStaggerVisible > *:nth-child(5) { transition-delay: 0.25s; }
+.revealStaggerVisible > *:nth-child(6) { transition-delay: 0.3s; }
+.revealStaggerVisible > *:nth-child(7) { transition-delay: 0.35s; }
+.revealStaggerVisible > *:nth-child(8) { transition-delay: 0.4s; }
+.revealStaggerVisible > *:nth-child(9) { transition-delay: 0.45s; }
+.revealStaggerVisible > *:nth-child(10) { transition-delay: 0.5s; }
