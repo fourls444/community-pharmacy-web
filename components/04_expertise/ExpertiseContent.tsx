@@ -16,30 +16,35 @@ const expertiseData = [
     title: "สาขา 2",
     description: "เภสัชชุมชน",
     image: "/images/expertise/img2.jpg",
+    link: "/expertise-detail",
   },
   {
     id: 3,
     title: "สาขา 3",
     description: "เภสัชชุมชน",
     image: "/images/expertise/img3.png",
+    link: "/expertise-detail",
   },
   {
     id: 4,
     title: "สาขา 4",
     description: "เภสัชชุมชน",
     image: "/images/expertise/img4.jpg",
+    link: "/expertise-detail",
   },
   {
     id: 5,
     title: "สาขา 5",
     description: "เภสัชชุมชน",
     image: "/images/expertise/img5.png",
+    link: "/expertise-detail",
   },
   {
     id: 6,
     title: "สาขา 6",
     description: "เภสัชชุมชน",
     image: "/images/expertise/img6.png",
+    link: "/expertise-detail",
   },
 ];
 

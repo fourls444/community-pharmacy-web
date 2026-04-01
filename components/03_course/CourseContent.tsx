@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Course.module.css";
 import {
   FaGraduationCap,
@@ -145,9 +146,11 @@ export default function CourseContent() {
         {/* 📚 ROW 1: SHORT TERM */}
         <div className={styles.rowHeader}>
           <h2 className={styles.rowTitle}>หลักสูตรระยะสั้น</h2>
-          <button className={styles.viewAllBtn}>
-            ดูทั้งหมด <FaChevronRight style={{ fontSize: '10px', marginLeft: '4px' }} />
-          </button>
+          <Link href="/course-detail">
+            <button className={styles.viewAllBtn}>
+              ดูทั้งหมด <FaChevronRight style={{ fontSize: '10px', marginLeft: '4px' }} />
+            </button>
+          </Link>
         </div>
         <div className={styles.cardsRow}>
           {mockCourseData.map((course, i) => (
@@ -195,10 +198,10 @@ function CourseCard({ icon, title, subtitle, desc, detailTitle, details }: any) 
             {icon}
           </div>
         </div>
-        <div>
+        <Link href="/course-detail" className={styles.cardHeaderLink}>
           <h3 className={styles.cardTitle}>{title}</h3>
           <p className={styles.cardSubTitle}>{subtitle}</p>
-        </div>
+        </Link>
       </div>
 
       <div className={styles.cardBody}>

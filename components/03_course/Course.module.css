@@ -290,6 +290,17 @@
     min-height: 120px;
 }
 
+.cardHeaderLink {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardHeaderLink:hover .cardTitle {
+    color: #7a7536;
+}
+
 .cardIcon {
     flex-shrink: 0;
     width: 48px;
