@@ -1,0 +1,287 @@
+/* พื้นหลังหลักของส่วน Highlight */
+.highlightSection {
+    padding: 6rem 0;
+    width: 100%;
+    /* Subtle background pattern */
+    background-color: #f8f9f2;
+    background-image: radial-gradient(#d4dbb0 1px, transparent 1px);
+    background-size: 40px 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ตกแต่งพื้นหลังด้วย Blobs ฟุ้งๆ (เคลื่อนไหวได้) */
+.blob1 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(123, 123, 30, 0.15) 0%, transparent 70%);
+    top: -100px;
+    right: -50px;
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: 0;
+    animation: float 15s infinite alternate ease-in-out;
+}
+
+.blob2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 219, 176, 0.2) 0%, transparent 70%);
+    bottom: -150px;
+    left: -100px;
+    border-radius: 50%;
+    filter: blur(50px);
+    z-index: 0;
+    animation: float 20s infinite alternate-reverse ease-in-out;
+}
+
+/* อนิเมชั่นสำหรับการลอยตัวของ Blobs */
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, 50px) scale(1.1); }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.sectionHeader {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 4rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #94a3b8;
+    margin-bottom: 1rem;
+    display: block;
+    text-transform: capitalize;
+}
+
+.mainTitle {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    font-size: 1.15rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* ส่วนควบคุมสไลเดอร์ */
+.sliderContainer {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sliderWrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ปุ่มเลื่อนสไลด์ (ซ้าย-ขวา) */
+.navButton {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #1e293b;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.navButton:hover {
+    background: #7b7b1e;
+    color: white;
+    transform: scale(1.1);
+}
+
+.prevButton {
+    left: 20%;
+}
+
+.nextButton {
+    right: 20%;
+}
+
+.slidesTrack {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* รูปแบบของสไลด์แต่ละใบ */
+.slide {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+    transform: scale(0.6);
+    z-index: 1;
+    will-change: transform, opacity;
+}
+
+/* สไลด์ที่กำลังแสดงหลัก */
+.activeSlide {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 5;
+}
+
+/* สไลด์ด้านข้าง (ลึกเข้าไป) */
+.lastSlide {
+    opacity: 0.5;
+    transform: translateX(-65%) scale(0.8);
+    z-index: 2;
+    filter: blur(2px) brightness(0.8);
+}
+
+.nextSlide {
+    opacity: 0.5;
+    transform: translateX(65%) scale(0.8);
+    z-index: 2;
+    filter: blur(2px) brightness(0.8);
+}
+
+/* กรอบหุ้มรูปภาพ */
+.imageWrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+/* ขยายรูปภาพเล็กน้อยเมื่อ Hover บนสไลด์ที่ Active */
+.activeSlide:hover .image {
+    transform: scale(1.05);
+}
+
+/* เอฟเฟกต์กระจกซ้อนทับ */
+.glassEffect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ส่วนจุดนำทางด้านล่าง */
+.pagination {
+    margin-top: 3rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d1d5db;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.activeDot {
+    width: 28px;
+    border-radius: 10px;
+    background: #7b7b1e;
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+    .mainTitle {
+        font-size: 2.2rem;
+    }
+
+    .slide {
+        width: 350px;
+        height: 350px;
+    }
+
+    .sliderWrapper {
+        height: 350px;
+    }
+
+    .prevButton {
+        left: 5%;
+    }
+
+    .nextButton {
+        right: 5%;
+    }
+}
+
+@media (max-width: 640px) {
+    .mainTitle {
+        font-size: 1.8rem;
+    }
+
+    .slide {
+        width: 280px;
+        height: 280px;
+    }
+
+    .sliderWrapper {
+        height: 280px;
+    }
+
+    /* ซ่อนสไลด์ด้านข้างบนมือถือเพื่อประหยัดพื้นที่ */
+    .lastSlide, .nextSlide {
+        display: none;
+    }
+
+    .prevButton, .nextButton {
+        background: rgba(255, 255, 255, 0.8);
+    }
+}

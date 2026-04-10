@@ -1,0 +1,690 @@
+.coursesWrapper {
+    width: 100%;
+    
+}
+
+/* ===================== HEADING ===================== */
+.sectionHeader {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.mainTitle {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    margin: 0;
+}
+
+/* ===================== TOP SECTION ===================== */
+.topSection {
+    display: grid;
+    grid-template-columns: 1fr 480.5px;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+/* Left side: Main Course Card */
+.mainCourseCard {
+    background: #fff;
+    border: 1px solid #e8e8dc;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mainCourseHeader {
+    background: linear-gradient(to right, #888d40, #9A9F54);
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #fff;
+}
+
+.mainCourseIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.mainCourseTitleBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainCourseTitle {
+    margin: 0 0 6px 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.mainCourseSub {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.mainCourseBody {
+    padding: 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainCourseDesc {
+    font-size: 14.5px;
+    color: #444;
+    line-height: 1.7;
+    margin: 0 0 24px 0;
+}
+
+.tagsRow {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f4f6ea;
+    color: #72721B;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.downloadBtnLarge {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    color: #111;
+    border: 1px solid #72721B;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    width: fit-content;
+    transition: all 0.2s;
+}
+
+.downloadBtnLarge:hover {
+    background: #72721B;
+    color: #fff;
+}
+
+.downloadBtnLarge:hover .btnIconCircle {
+    background: #fff;
+    color: #72721B;
+}
+
+.btnIconCircle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #5E6328;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+/* Right side: Top Image & Small Cards */
+.rightSideContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.topImageContainer {
+    width: 480.5px;
+    height: 256px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.topFeaturedImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.twoSmallCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    flex: 1;
+}
+
+.smallCardGreen {
+    background: #8e9544;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: #fff;
+}
+
+.smCardIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.smallCardGreen h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.smallCardGreen p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.smallCardWhite {
+    background: #fff;
+    border: 1px solid #e8e8dc;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.smCardIconWhite {
+    width: 24px;
+    height: 24px;
+    color: #8e9544;
+}
+
+.smallCardWhite h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+}
+
+.smallCardWhite p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ===================== MIDDLE SECTION (3 CARDS) ===================== */
+.threeCardsRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.courseCard {
+    background: #fff;
+    border: 1px solid #e8e8dc;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.courseCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+.cardHeaderImg {
+    width: 100%;
+    height: 156px;
+    overflow: hidden;
+}
+
+.cardHeaderImgEl {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cardBody {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardHeaderTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+}
+
+.cardSubTitle {
+    font-size: 12px;
+    color: #666;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+}
+
+.cardDesc {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex: 1;
+}
+
+.cardDesc p {
+    margin: 0 0 12px 0;
+}
+
+.cardDesc ul {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cardDesc li {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.cardDesc li strong {
+    color: #222;
+}
+
+.infoBtnOutline {
+    width: 100%;
+    padding: 14px;
+    background: #fdfdfd;
+    color: #72721B;
+    border: 1px solid #e8e8dc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.infoBtnOutline:hover {
+    background: #A4A865;
+    color:#fff;
+}
+
+
+
+/* DOTS */
+.carouselDots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.dot.dotActive {
+    background: #72721B;
+}
+
+
+.cardsRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+/* ===================== COURSE CARD ===================== */
+.cardHeader {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 24px 24px 20px 24px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8dc;
+    transition: background 0.25s ease, border-color 0.25s ease;
+    min-height: 120px;
+}
+
+.cardDesc {
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.7;
+    margin: 0 0 20px 0;
+}
+
+.rowHeader{
+    border-left: 5px solid #7a7536;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0 20px;
+    padding-left: 12px;
+    display: flex;
+}
+
+.viewAllBtn{
+    background: linear-gradient(to right, #8a8a3a 0%, #a0a050 100%);
+    border-top-color: transparent;
+    color: #fff;color: #64748b;
+    cursor: pointer;
+    background: 0 0;
+    border: none;
+    align-items: center;
+    gap: .25rem;
+    padding: 0;
+    font-size: 14.5px;
+    font-weight: 700;
+    transition: all .2s;
+    display: flex;
+}
+
+.courseCard {
+    border: 1px solid #e8e8dc;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    overflow: hidden;
+    background: #fff;
+}
+
+.cardIcon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #72721B 0%, #A4A865 100%);
+    border-radius: 12px;
+}
+
+.cardTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+    transition: color 0.25s ease;
+}
+
+.cardSubTitle {
+    font-size: 10px;
+    font-weight: 600;
+    color: #888;
+    margin: 0;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    transition: color 0.25s ease;
+}
+
+.detailSection {
+    margin: 0;
+}
+
+/* รายละเอียด — thick green LEFT bar */
+.detailTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 12px 0;
+    padding-left: 12px;
+    border-left: 4px solid #7a7536;
+    line-height: 1.4;
+}
+
+.detailList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detailList li {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+}
+
+.detailList li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #7a7536;
+    font-weight: 700;
+}
+
+/* ===================== DOWNLOAD BUTTON ===================== */
+.downloadBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-top: 1px solid #e8e8dc;
+    border-radius: 0 0 16px 16px;
+    background: transparent;
+    color: #555;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: auto;
+}
+
+.downloadBtn:hover {
+    background: linear-gradient(to right, #8a8a3a 0%, #a0a050 100%);
+    border-top-color: transparent;
+    color: #fff;
+}
+
+.courseCard:hover .cardHeader {
+    background: linear-gradient(to right,#f0f0d8 0%, #FFFFFF 80%);
+   
+}
+
+.courseCard:hover .downloadBtn {
+    background: linear-gradient(to right, #8a8a3a 0%, #a0a050 100%);
+    border-top-color: transparent;
+    color: #fff;
+}
+
+
+/* ===================== BOTTOM CERTIFICATION BANNER ===================== */
+.certFooter {
+    background: url("/images/courses/bg.png") center/cover no-repeat;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.certLeft {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1;
+}
+
+.certIconContainer {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+}
+
+.certTextContainer h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.certTextContainer p {
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.certRightActions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.certActionBtnWhite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #fff;
+    color: #72721B;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.certActionBtnWhite:hover {
+    transform: translateY(-2px);
+}
+
+.btnIconSmall {
+    color: #72721B;
+    display: flex;
+}
+
+.certActionBtnOutline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.certActionBtnOutline:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.btnIconSmallTransparent {
+    color: #fff;
+    display: flex;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+    .topSection {
+        grid-template-columns: 1fr;
+    }
+    .topImageContainer {
+        width: 100%;
+        max-width: 480.5px;
+    }
+    .threeCardsRow {
+        grid-template-columns: 1fr 1fr;
+    }
+    .certFooter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .certRightActions {
+        flex-direction: column;
+    }
+        .cardsRow {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .certFooter {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 24px 20px;
+    }
+
+    .certActions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .threeCardsRow {
+        grid-template-columns: 1fr;
+    }
+    .twoSmallCards {
+        grid-template-columns: 1fr;
+    }
+        .heading {
+        font-size: 24px;
+    }
+
+    .cardsRow {
+        grid-template-columns: 1fr;
+    }
+
+    .certFooter {
+        flex-direction: column;
+        padding: 20px 16px;
+    }
+}

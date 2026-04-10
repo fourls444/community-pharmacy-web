@@ -10,8 +10,8 @@ const ibmPlexSansThai = IBM_Plex_Sans_Thai({
 });
 
 export const metadata = {
-  title: "วิทยาลัยเภสัชกรรมสมุนไพร",
-  description: "College of Herbal Pharmacy of Thailand",
+  title: "วิทยาลัยเภสัชกรรมชุมชน",
+  description: "THE COMMUNITY PHARMACY COLLEGE OF THAILAND"
 };
 
 export default function RootLayout({
